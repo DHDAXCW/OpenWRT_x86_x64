@@ -4,3 +4,5 @@
 密码passwall
 
 对固件有什么意见请到lssues
+
+固件下载格式openwrt-x86-64-generic-squashfs-combined-efi.img.gz，看准了！别下错了
