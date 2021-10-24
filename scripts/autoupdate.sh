@@ -7,32 +7,28 @@ check_update () {
 }
 #清理文件
 clean_up() {
-    rm -rf artifact openwrt-rockchip*.img.gz openwrt-rockchip*img* sha256sums* autoupdate.sh*
+    rm -rf artifact openwrt*.img.gz openwrt*img* sha256sums* autoupdate.sh*
 }
 #版本选择
 version_choose () {
     echo -e '\e[92m输入对应数字选择版本或退出\e[0m'
     echo "0---Exit退出"
-    echo "1---Docker_高大全"
-    echo "2---Stable_稳定精简"
-    echo "3---Formal_正式版"
-    read -p "请输入数字[0-3],回车确认 " choose
+    echo "1---正式版"
+    echo "2---Docker版"
+    read -p "请输入数字[0-2],回车确认 " choose
     case $choose in
         0)
             echo -e '\e[91m退出脚本，升级结束\e[0m'
             exit;
             ;;
         1)
-            echo -e '\e[92m已选择Docker_高大全\e[0m'
+            echo -e '\e[92m已选择正式版\e[0m'
             ;;
         2)
-            echo -e '\e[92m已选择Stable_稳定精简\e[0m'
-            ;;
-        3)
-            echo -e '\e[92m已选择Formal_正式版\e[0m'
+            echo -e '\e[92m已选择Docker版\e[0m'
             ;;
         *)
-            echo -e '\e[91m非法输入,请输入数字[0-3]\e[0m'
+            echo -e '\e[91m非法输入,请输入数字[0-2]\e[0m'
             version_choose
             ;;
     esac
@@ -42,13 +38,13 @@ download_file () {
     cd /tmp && clean_up
     days=$(($days+1))
     echo `(date -d "@$(($(busybox date +%s) - 86400*($days-1)))" +%Y.%m.%d)`
-    wget https://github.com/DHDAXCW/NanoPi-R4S-2021/releases/download/$(date -d "@$(($(busybox date +%s) - 86400*($days-1)))" +%Y.%m.%d)-Lean$choose/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz
-    wget https://github.com/DHDAXCW/NanoPi-R4S-2021/releases/download/$(date -d "@$(($(busybox date +%s) - 86400*($days-1)))" +%Y.%m.%d)-Lean$choose/sha256sums
+    wget https://github.com/DHDAXCW/FusionWRT_x86_x64/releases/download/$(date -d "@$(($(busybox date +%s) - 86400*($days-1)))" +%Y.%m.%d)-Lean$choose/openwrt-x86-64-generic-squashfs-combined-efi.img.gz
+    wget https://github.com/DHDAXCW/FusionWRT_x86_x64/releases/download/$(date -d "@$(($(busybox date +%s) - 86400*($days-1)))" +%Y.%m.%d)-Lean$choose/sha256sums
     exist_judge
 }
 #存在判断
 exist_judge () {
-    if [ -f /tmp/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz ]; then
+    if [ -f /tmp/openwrt-x86-64-generic-squashfs-combined-efi.img.gz ]; then
         echo -e '\e[92m固件已下载\e[0m'
         echo `(date -d "@$(($(busybox date +%s) - 86400*($days-1)))" +%Y.%m.%d)`-Lean$choose
         version_skip
@@ -84,14 +80,14 @@ version_skip () {
 }
 #固件验证
 firmware_check () {
-    if [ -f /tmp/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img	]; then
+    if [ -f /tmp/openwrt-x86-64-generic-squashfs-combined-efi.img	]; then
         echo -e '\e[92m检查升级文件大小\e[0m'
-        du -h /tmp/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img
-    elif [ -f /tmp/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz	]; then
+        du -h /tmp/openwrt-x86-64-generic-squashfs-combined-efi.img
+    elif [ -f /tmp/openwrt-x86-64-generic-squashfs-combined-efi.img.gz	]; then
         echo -e '\e[92m计算固件的sha256sum值\e[0m'
-        sha256sum openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz
+        sha256sum openwrt-x86-64-generic-squashfs-combined-efi.img.gz
         echo -e '\e[92m对比下列sha256sum值，检查固件是否完整\e[0m'
-        grep ext4-sysupgrade sha256sums
+        grep efi.img.gz sha256sums
     else
         echo -e '\e[91m没有相关升级文件，请检查网络\e[0m'
         clean_up
@@ -119,10 +115,10 @@ version_confirm () {
 }
 #解压固件
 unzip_fireware () {
-    rm -rf /tmp/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img
+    rm -rf /tmp/openwrt-x86-64-generic-squashfs-combined-efi.img
     echo -e '\e[92m开始解压固件\e[0m'
-    gunzip /tmp/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz
-    if [ -f /tmp/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img	]; then
+    gunzip /tmp/openwrt-x86-64-generic-squashfs-combined-efi.img.gz
+    if [ -f /tmp/openwrt-x86-64-generic-squashfs-combined-efi.img	]; then
         echo -e '\e[92m已解压出升级文件\e[0m'
         firmware_check
     else
@@ -136,7 +132,7 @@ unzip_fireware () {
 update_system () {
     echo -e '\e[92m开始升级系统\e[0m'
     sleep 3s
-    sysupgrade -v /tmp/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img
+    sysupgrade -v /tmp/openwrt-x86-64-generic-squashfs-combined-efi.img
 }
 #系统更新
 update_firmware () {
