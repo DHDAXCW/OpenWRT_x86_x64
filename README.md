@@ -23,6 +23,9 @@ wget https://raw.githubusercontent.com/DHDAXCW/FusionWRT_x86_x64/main/scripts/au
 ```
 wget https://gitee.com/dhdaxcw/FusionWRT_x86_x64/raw/main/scripts/autoupdate.sh && sh autoupdate.sh
 ```
+
+如果升级失败，可通过系统→备份/升级→刷写新的固件
+
 ## 提示
  - 我的固件加了动态超频，不管热不热这是取决后台运行程序在跑什么。
  - 感觉很热  就加风扇，推荐 风扇6cm×6cm，薄1cm，usb也行 或者端子线zh1.5（风扇脚本目前在建设中）
