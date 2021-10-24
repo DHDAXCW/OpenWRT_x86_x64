@@ -7,7 +7,7 @@
 ### - Docker：正式版带docker，有超频，带有docker插件。（对passwall的udp要求很高，不要刷docker版本）
 - 电报群：https://t.me/DHDAXCW
 # 插件展示
- ![Alt text](scripts/20.jpg?raw=true "Title")
+ ![Alt text](scripts/20.png?raw=true "Title")
 
 
 - 正式版（含超频）对折腾的，可以选择，电压一定要考虑。超频都是升压的，会造成不稳定的。比如跑cpu测试容易升压等。
