@@ -14,7 +14,11 @@
 - Docker版 含Docker插件，会导致udp转发失效 慎用哦，只要别开passwall的udp，啥都不影响使用！
 - 稳定版 含有日常使用插件
 
-
+# 在线升级
+ttyd执行：
+```
+https://raw.githubusercontent.com/DHDAXCW/FusionWRT_x86_x64/main/scripts/autoupdate.sh && sh autoupdate.sh
+```
 ## 提示
  - 我的固件加了动态超频，不管热不热这是取决后台运行程序在跑什么。
  - 感觉很热  就加风扇，推荐 风扇6cm×6cm，薄1cm，usb也行 或者端子线zh1.5（风扇脚本目前在建设中）
