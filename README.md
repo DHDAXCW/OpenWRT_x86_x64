@@ -21,7 +21,7 @@ wget https://raw.githubusercontent.com/DHDAXCW/FusionWRT_x86_x64/main/scripts/au
 ```
 国内gitee
 ```
-https://gitee.com/dhdaxcw/FusionWRT_x86_x64/raw/main/scripts/autoupdate.sh
+https://gitee.com/dhdaxcw/FusionWRT_x86_x64/raw/main/scripts/autoupdate.sh && sh autoupdate.sh
 ```
 ## 提示
  - 我的固件加了动态超频，不管热不热这是取决后台运行程序在跑什么。
