@@ -15,7 +15,8 @@ version_choose () {
     echo "0---Exit退出"
     echo "1---正式版"
     echo "2---Docker版"
-    read -p "请输入数字[0-2],回车确认 " choose
+    echo "3---精简版"
+    read -p "请输入数字[0-3],回车确认 " choose
     case $choose in
         0)
             echo -e '\e[91m退出脚本，升级结束\e[0m'
@@ -27,8 +28,11 @@ version_choose () {
         2)
             echo -e '\e[92m已选择Docker版\e[0m'
             ;;
+        3)
+            echo -e '\e[92m已选择精简版\e[0m'
+            ;;
         *)
-            echo -e '\e[91m非法输入,请输入数字[0-2]\e[0m'
+            echo -e '\e[91m非法输入,请输入数字[0-3]\e[0m'
             version_choose
             ;;
     esac
