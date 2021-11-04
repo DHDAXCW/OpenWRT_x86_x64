@@ -1,4 +1,5 @@
 #---Edit by DHDAXCW@lone_wind
+mount -t tmpfs -o remount,size=2G tmpfs /tmp
 #检查更新
 check_update () {
     #wget 'https://git.openwrt.org/?p=keyring.git;a=blob_plain;f=usign/1035ac73cc4e59e3' -O 1035ac73cc4e59e3
