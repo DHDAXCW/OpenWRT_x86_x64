@@ -15,15 +15,11 @@
 - 稳定版 含有日常使用插件
 
 # 在线升级
-ttyd执行：github
+### 该升级支持4G版，1G版
+- 多版本在里面，自己选 👇
 ```
-wget https://raw.githubusercontent.com/DHDAXCW/FusionWRT_x86_x64/main/scripts/autoupdate.sh && sh autoupdate.sh
+wget https://raw.githubusercontent.com/lone-wind/scripts/main/onlineupdate.sh && sh onlineupdate.sh
 ```
-国内gitee
-```
-wget https://gitee.com/dhdaxcw/FusionWRT_x86_x64/raw/main/scripts/autoupdate.sh && sh autoupdate.sh
-```
-
 如果升级失败，可通过系统→备份/升级→刷写新的固件
 
 ## 提示
