@@ -9,7 +9,7 @@
  ![Alt text](scripts/20.png?raw=true "Title")
 
 # 在线升级
-### 该升级支持4G版，1G版
+### 
 - 多版本在里面，自己选 👇
 ```
 wget https://raw.githubusercontent.com/lone-wind/scripts/main/onlineupdate.sh && sh onlineupdate.sh
