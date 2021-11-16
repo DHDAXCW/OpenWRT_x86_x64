@@ -23,7 +23,7 @@ env:
 jobs:
   Build:
     runs-on: ubuntu-20.04
-    if: github.repository == 'DHDAXCW/FusionWRT_x86_x64'
+    if: github.repository == 'mofanxt/FusionWRT_x86_x64'
     outputs:
       OPENWRTROOT: ${{ steps.update.outputs.OPENWRTROOT }}
       PLATFORM: ${{ steps.compile.outputs.PLATFORM }}
@@ -170,7 +170,7 @@ jobs:
   Upload:
     needs: [Build]
     runs-on: ubuntu-20.04
-    if: github.repository == 'DHDAXCW/FusionWRT_x86_x64'
+    if: github.repository == 'mofanxt/FusionWRT_x86_x64'
     steps:
       - name: Checkout
         uses: actions/checkout@main
