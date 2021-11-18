@@ -107,7 +107,15 @@ ln -sf ../../../feeds/luci/applications/luci-app-aliddns ./package/feeds/luci/lu
 pushd package/lean
 svn co https://github.com/immortalwrt/packages/trunk/net/pandownload-fake-server
 popd
+# Add luci-app-ddnsto
+pushd package/network/services
+git clone --depth=1 https://github.com/linkease/ddnsto-openwrt
+popd
 
+# Add luci-app-linkease
+pushd package/network/services
+git clone --depth=1 https://github.com/linkease/linkease-openwrt
+popd
 # Mod zzz-default-settings
 pushd package/lean/default-settings/files
 sed -i '/http/d' zzz-default-settings
@@ -176,9 +184,3 @@ rm -rf ./feeds/packages/net/adguardhome
 svn co https://github.com/openwrt/packages/trunk/net/adguardhome feeds/packages/net/adguardhome
 sed -i '/\t)/a\\t$(STAGING_DIR_HOST)/bin/upx --lzma --best $(GO_PKG_BUILD_BIN_DIR)/AdGuardHome' ./feeds/packages/net/adguardhome/Makefile
 sed -i '/init/d' feeds/packages/net/adguardhome/Makefile
-# Add ddnsto+likesae
-echo >> feeds.conf.default
-echo 'src-git nas https://github.com/linkease/nas-packages.git;master' >> feeds.conf.default
-echo 'src-git nas_luci https://github.com/linkease/nas-packages-luci.git;main' >> feeds.conf.default
-./scripts/feeds update nas nas_luci
-./scripts/feeds install -a -p nas
