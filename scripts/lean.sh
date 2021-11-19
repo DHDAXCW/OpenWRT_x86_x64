@@ -106,16 +106,7 @@ ln -sf ../../../feeds/luci/applications/luci-app-aliddns ./package/feeds/luci/lu
 # Add Pandownload
 pushd package/lean
 svn co https://github.com/immortalwrt/packages/trunk/net/pandownload-fake-server
-popd
-# Add luci-app-ddnsto
-pushd package/network/services
-git clone --depth=1 https://github.com/linkease/ddnsto-openwrt
-popd
 
-# Add luci-app-linkease
-pushd package/network/services
-git clone --depth=1 https://github.com/linkease/linkease-openwrt
-popd
 # Mod zzz-default-settings
 pushd package/lean/default-settings/files
 sed -i '/http/d' zzz-default-settings
