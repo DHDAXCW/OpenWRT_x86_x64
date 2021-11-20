@@ -54,9 +54,7 @@ jobs:
         git config --global user.name "GitHub"
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
-        echo >> feeds.conf.default
-        echo 'src-git nas https://github.com/linkease/nas-packages.git;master' >> feeds.conf.default
-        echo 'src-git nas_luci https://github.com/linkease/nas-packages-luci.git;main' >> feeds.conf.default
+
     - name: Update Feeds
       id: update
       run: |
