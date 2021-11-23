@@ -34,6 +34,12 @@ git clone --depth=1 https://github.com/ysc3839/luci-proto-minieap
 # Add OpenClash
 git clone --depth=1 -b master https://github.com/vernesong/OpenClash
 
+# Add ddnsto & linkease
+svn co https://github.com/linkease/nas-packages-luci/trunk/luci/luci-app-ddnsto
+svn co https://github.com/linkease/nas-packages-luci/trunk/luci/luci-app-linkease
+svn co https://github.com/linkease/nas-packages/trunk/network/services/ddnsto
+svn co https://github.com/linkease/nas-packages/trunk/network/services/linkease
+
 # Add luci-app-onliner (need luci-app-nlbwmon)
 git clone --depth=1 https://github.com/rufengsuixing/luci-app-onliner
 
