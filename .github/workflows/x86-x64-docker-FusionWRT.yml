@@ -66,10 +66,10 @@ jobs:
         git clone --depth=1 https://github.com/coolsnowwolf/luci customfeeds/luci
         chmod +x ../scripts/*.sh
         ../scripts/hook-feeds.sh
-    - name: MOD index file
-      run: |
-         cd $OPENWRTROOT/package/lean/autocore/files/x86
-         sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:Telegram %></td><td><a href="https://t.me/DHDAXCW"><%:电报交流群%></a></td></tr>' index.htm
+    # - name: MOD index file
+      # run: |
+        #  cd $OPENWRTROOT/package/lean/autocore/files/x86
+        #  sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:Telegram %></td><td><a href="https://t.me/DHDAXCW"><%:电报交流群%></a></td></tr>' index.htm
     - name: Install Feeds
       run: |
         cd $OPENWRTROOT
@@ -233,7 +233,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: ${{ steps.tag.outputs.release_date }} x86-64-formal-edition_Docker版_全插件
+          name: ${{ steps.tag.outputs.release_date }} x86-64-formal-edition_Docker版_精简插件
           tag_name: ${{ steps.tag.outputs.release_tag }}
           body_path: release.txt
           files: ${{ env.FIRMWARE }}/*
