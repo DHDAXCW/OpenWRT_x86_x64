@@ -32,7 +32,7 @@ git clone --depth=1 https://github.com/ysc3839/luci-proto-minieap
 # git clone https://github.com/garypang13/luci-app-bypass.git
 
 # Add OpenClash
-svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
+git clone --depth=1 -b master https://github.com/vernesong/OpenClash
 
 # Add luci-app-adguardhome
 svn co https://github.com/Lienol/openwrt-package/branches/other/luci-app-adguardhome
