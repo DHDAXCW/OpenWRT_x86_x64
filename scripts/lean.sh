@@ -57,10 +57,12 @@ git clone --depth=1 https://github.com/NateLol/luci-app-oled
 git clone --depth=1 https://github.com/tty228/luci-app-serverchan
 
 # Add luci-app-diskman
-git clone --depth=1 https://github.com/SuLingGG/luci-app-diskman
-mkdir parted
-cp luci-app-diskman/Parted.Makefile parted/Makefile
+# git clone --depth=1 https://github.com/SuLingGG/luci-app-diskman
+# mkdir parted
+# cp luci-app-diskman/Parted.Makefile parted/Makefile
+
 git clone https://github.com/project-lede/luci-app-godproxy.git
+
 # Add luci-app-dockerman
 rm -rf ../lean/luci-app-docker
 git clone --depth=1 https://github.com/lisaac/luci-app-dockerman
