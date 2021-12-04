@@ -61,7 +61,8 @@ git clone --depth=1 https://github.com/tty228/luci-app-serverchan
 # mkdir parted
 # cp luci-app-diskman/Parted.Makefile parted/Makefile
 
-git clone https://github.com/project-lede/luci-app-godproxy.git
+# Add luci-app-ikoolproxy (godproxy)
+git clone https://github.com/iwrt/luci-app-ikoolproxy.git
 
 # Add luci-app-dockerman
 rm -rf ../lean/luci-app-docker
