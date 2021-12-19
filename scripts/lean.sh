@@ -4,7 +4,7 @@ svn export https://github.com/openwrt/packages/trunk/utils/runc/Makefile ./feeds
 
 # fix netdata
 rm -rf ./feeds/packages/admin/netdata
-svn co https://github.com/WYC-2020/packages/trunk/admin/netdata ./feeds/packages/admin/netdata
+svn co https://github.com/DHDAXCW/packages/branches/ok/admin/netdata ./feeds/packages/admin/netdata
 
 # Add luci-app-netdata
 rm -rf ./package/lean/luci-app-netdata
