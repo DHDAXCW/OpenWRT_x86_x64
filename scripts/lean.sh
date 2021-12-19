@@ -1,6 +1,11 @@
 #!/bin/bash
 rm -rf ./feeds/packages/utils/runc/Makefile
 svn export https://github.com/openwrt/packages/trunk/utils/runc/Makefile ./feeds/packages/utils/runc/Makefile
+
+# Add luci-app-netdata
+rm -rf ./package/lean/luci-app-netdata
+git clone https://github.com/sirpdboy/luci-app-netdata ./package/lean/luci-app-netdata.
+
 # Clone community packages to package/community
 mkdir package/community
 pushd package/community
