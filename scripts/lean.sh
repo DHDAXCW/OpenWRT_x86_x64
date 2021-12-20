@@ -18,10 +18,6 @@ rm -rf openwrt-package/luci-app-verysync
 # Add luci-app-ssr-plus
 git clone --depth=1 https://github.com/fw876/helloworld.git
 
-# Add luci-app-netdata
-rm -rf ../lean/luci-app-netdata
-git clone https://github.com/sirpdboy/luci-app-netdata
-
 # Add luci-app-unblockneteasemusic
 rm -rf ../lean/luci-app-unblockmusic
 git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git
