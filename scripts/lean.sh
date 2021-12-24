@@ -36,6 +36,10 @@ git clone --depth=1 https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk
 # Add luci-proto-minieap
 git clone --depth=1 https://github.com/ysc3839/luci-proto-minieap
 
+# Add luci-app-netdata
+rm -rf ../lean/luci-app-netdata
+git clone https://github.com/sirpdboy/luci-app-netdata
+
 # Add luci-app-bypass
 # git clone https://github.com/garypang13/luci-app-bypass.git
 
