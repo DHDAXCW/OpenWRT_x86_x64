@@ -2,6 +2,9 @@
 rm -rf ./feeds/packages/utils/runc/Makefile
 svn export https://github.com/openwrt/packages/trunk/utils/runc/Makefile ./feeds/packages/utils/runc/Makefile
 
+rm -rf target/linux
+svn co https://github.com/DHDAXCW/RK356X/trunk/target/linux
+
 # fix netdata
 rm -rf ./feeds/packages/admin/netdata
 svn co https://github.com/DHDAXCW/packages/branches/ok/admin/netdata ./feeds/packages/admin/netdata
