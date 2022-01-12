@@ -8,12 +8,6 @@
 # 插件展示
  ![Alt text](scripts/20.png?raw=true "Title")
 
-# 在线升级
-### 
-- 多版本在里面，自己选 👇
-```
-wget https://raw.githubusercontent.com/lone-wind/scripts/main/onlineupdate.sh && sh onlineupdate.sh
-```
 如果升级失败，可通过系统→备份/升级→刷写新的固件
 
 # [赏个鸡腿吧](https://afdian.net/@dhdaxcw/plan)
