@@ -44,7 +44,7 @@ git clone https://github.com/sirpdboy/luci-app-netdata
 # git clone https://github.com/garypang13/luci-app-bypass.git
 
 # Add OpenClash
-git clone --depth=1 -b master https://github.com/vernesong/OpenClash
+git clone https://github.com/DHDAXCW/OpenClash
 
 # Add luci-app-adguardhome
 svn co https://github.com/Lienol/openwrt-package/branches/other/luci-app-adguardhome
