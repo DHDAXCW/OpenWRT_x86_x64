@@ -31,3 +31,7 @@ immortalwrt 的 OpenWrt 项目：
 P3TERX 大佬的 Actions-OpenWrt 项目：
 
 <https://github.com/P3TERX/Actions-OpenWrt>
+
+SuLingGG 大佬的 Actions 编译框架 项目：
+
+https://github.com/SuLingGG/OpenWrt-Rpi
