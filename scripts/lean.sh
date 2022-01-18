@@ -23,7 +23,7 @@ rm -rf ../lean/luci-app-unblockmusic
 git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git
 
 # Add luci-app-passwall
-#git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
+# git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
 
 # Add luci-app-vssr <M>
 git clone --depth=1 https://github.com/jerrykuku/lua-maxminddb.git
@@ -43,9 +43,6 @@ git clone https://github.com/sirpdboy/luci-app-netdata
 # Add luci-app-bypass
 # git clone https://github.com/garypang13/luci-app-bypass.git
 
-# Add OpenClash
-git clone https://github.com/DHDAXCW/OpenClash
-
 # Add luci-app-adguardhome
 svn co https://github.com/Lienol/openwrt-package/branches/other/luci-app-adguardhome
 
@@ -61,8 +58,9 @@ git clone --depth=1 https://github.com/rufengsuixing/luci-app-onliner
 # Add luci-app-oled (R2S Only)
 git clone --depth=1 https://github.com/NateLol/luci-app-oled
 
-# Add ServerChan
-git clone --depth=1 https://github.com/tty228/luci-app-serverchan
+# Add OpenClash
+# git clone --depth=1 -b master https://github.com/vernesong/OpenClash
+git clone https://github.com/DHDAXCW/OpenClash
 
 # Add luci-app-diskman
 # git clone --depth=1 https://github.com/SuLingGG/luci-app-diskman
