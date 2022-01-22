@@ -20,7 +20,7 @@ git clone --depth=1 https://github.com/fw876/helloworld.git
 
 # Add luci-app-unblockneteasemusic
 rm -rf ../lean/luci-app-unblockmusic
-git clone depth=1 https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git
+git clone --depth=1 https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git
 
 # Add luci-app-passwall
 # git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
@@ -38,10 +38,10 @@ git clone --depth=1 https://github.com/ysc3839/luci-proto-minieap
 
 # Add luci-app-netdata
 rm -rf ../lean/luci-app-netdata
-git clone depth=1 https://github.com/sirpdboy/luci-app-netdata
+git clone --depth=1 https://github.com/sirpdboy/luci-app-netdata
 
 # Add luci-app-bypass
-# git clone depth=1 https://github.com/garypang13/luci-app-bypass.git
+# git clone --depth=1 https://github.com/garypang13/luci-app-bypass.git
 
 # Add luci-app-adguardhome
 svn co https://github.com/Lienol/openwrt-package/branches/other/luci-app-adguardhome
@@ -68,7 +68,7 @@ git clone --depth=1 -b master https://github.com/vernesong/OpenClash
 # cp luci-app-diskman/Parted.Makefile parted/Makefile
 
 # Add luci-app-ikoolproxy (godproxy)
-git clone depth=1 https://github.com/iwrt/luci-app-ikoolproxy.git
+git clone --depth=1 https://github.com/iwrt/luci-app-ikoolproxy.git
 
 # Add luci-app-dockerman
 rm -rf ../lean/luci-app-docker
@@ -165,7 +165,7 @@ sed -i '/mt7662u_rom_patch.bin/a\\techo mt76-usb disable_usb_sg=1 > $\(1\)\/etc\
 popd
 
 # Add po2lmo
-git clone depth=1 https://github.com/openwrt-dev/po2lmo.git
+git clone --depth=1 https://github.com/openwrt-dev/po2lmo.git
 pushd po2lmo
 make && sudo make install
 popd
