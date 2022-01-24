@@ -186,7 +186,7 @@ sed -i 's/5.10/5.4/g' target/linux/x86/Makefile
 
 # Custom configs
 # git am $GITHUB_WORKSPACE/patches/lean/*.patch
-git am $GITHUB_WORKSPACE/patches/*.patch
+git am $GITHUB_WORKSPACE/patchs/*.patch
 echo -e " DHDAXCW's FusionWrt built on "$(date +%Y.%m.%d)"\n -----------------------------------------------------" >> package/base-files/files/etc/banner
 echo 'net.bridge.bridge-nf-call-iptables=0' >> package/base-files/files/etc/sysctl.conf
 echo 'net.bridge.bridge-nf-call-ip6tables=0' >> package/base-files/files/etc/sysctl.conf
