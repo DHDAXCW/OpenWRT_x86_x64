@@ -3,8 +3,8 @@ name: x86-x64-Stablize-FusionWRT
 on:
   repository_dispatch:
   workflow_dispatch:
-  schedule:
-    - cron: 0 17 * * *
+  # schedule:
+    # - cron: 0 17 * * *
   # watch:
   #   types: started
 
