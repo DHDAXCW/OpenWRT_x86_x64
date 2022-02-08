@@ -182,7 +182,7 @@ sed -i '/uci commit system/i\uci set system.@system[0].hostname='FusionWrt'' pac
 sed -i "s/OpenWrt /DHDAXCW @ FusionWrt /g" package/lean/default-settings/files/zzz-default-settings
 
 # Test kernel 5.10
-sed -i 's/5.10/5.4/g' target/linux/x86/Makefile
+# sed -i 's/5.10/5.4/g' target/linux/x86/Makefile
 
 # Custom configs
 # git am $GITHUB_WORKSPACE/patches/lean/*.patch
