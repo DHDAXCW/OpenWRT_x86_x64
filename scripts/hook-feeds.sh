@@ -10,6 +10,7 @@ svn co https://github.com/immortalwrt/luci/trunk/protocols/luci-proto-modemmanag
 
 # Add luci-app-gowebdav
 svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-gowebdav luci/applications/luci-app-gowebdav
+rm -rf packages/net/gowebdav
 svn co https://github.com/immortalwrt/packages/trunk/net/gowebdav packages/net/gowebdav
 
 # Add tmate
@@ -20,9 +21,11 @@ git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall luci/applicati
 # git clone -b hello https://github.com/DHDAXCW/openwrt-passwall luci/applications/openwrt-passwall
 
 # Add gotop
+rm -rf packages/admin/gotop
 svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/admin/gotop packages/admin/gotop
 
 # Add minieap
+rm -rf packages/net/minieap
 svn co https://github.com/immortalwrt/packages/trunk/net/minieap packages/net/minieap
 
 # Replace smartdns with the official version
@@ -37,9 +40,9 @@ popd
 pushd customfeeds/luci
 export luci_feed="$(pwd)"
 popd
-sed -i '/src-git-full packages/d' feeds.conf.default
+sed -i '/src-git packages/d' feeds.conf.default
 echo "src-link packages $packages_feed" >> feeds.conf.default
-sed -i '/src-git-full luci/d' feeds.conf.default
+sed -i '/src-git luci/d' feeds.conf.default
 echo "src-link luci $luci_feed" >> feeds.conf.default
 
 # Update feeds
