@@ -213,7 +213,7 @@ sed -i "s/OpenWrt /DHDAXCW @ FusionWrt /g" package/lean/default-settings/files/z
 # find package/*/ feeds/*/ -maxdepth 6 -path "*luci-app-smartdns/luasrc/controller/smartdns.lua" | xargs -i sed -i 's/\"SmartDNS\")\, 4/\"SmartDNS\")\, 3/g' {} 
 
 # Test kernel 5.10
-# sed -i 's/5.4/5.10/g' target/linux/rockchip/Makefile
+sed -i 's/5.4/5.10/g' target/linux/x86/Makefile
 
 # Custom configs
 # git am $GITHUB_WORKSPACE/patches/lean/*.patch
