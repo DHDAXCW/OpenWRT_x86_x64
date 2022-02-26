@@ -57,9 +57,6 @@ svn co https://github.com/linkease/nas-packages-luci/trunk/luci/luci-app-linkeas
 svn co https://github.com/linkease/nas-packages/trunk/network/services/ddnsto
 svn co https://github.com/linkease/nas-packages/trunk/network/services/linkease
 
-# Add luci-app-oled (R2S Only)
-git clone --depth=1 https://github.com/NateLol/luci-app-oled
-
 # Add OpenClash
 git clone --depth=1 -b master https://github.com/vernesong/OpenClash
 # git clone https://github.com/DHDAXCW/OpenClash
@@ -91,13 +88,6 @@ cp -f $GITHUB_WORKSPACE/data/bg1.jpg luci-theme-argon/htdocs/luci-static/argon/i
 
 # Add subconverter
 git clone --depth=1 https://github.com/tindy2013/openwrt-subconverter
-
-# Add extra wireless drivers
-svn co https://github.com/baxobox/add_rtl8812ac/trunk/files/package/kernel/rtl8812au-ac
-svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/package/kernel/rtl8821cu
-svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/package/kernel/rtl8188eu
-svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/package/kernel/rtl8192du
-svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/package/kernel/rtl88x2bu
 
 # Add luci-app-smartdns & smartdns
 svn co https://github.com/281677160/openwrt-package/trunk/feeds/luci/applications/luci-app-smartdns
@@ -164,11 +154,6 @@ popd
 pushd feeds/packages/utils
 rm -rf syncthing
 svn co https://github.com/openwrt/packages/trunk/utils/syncthing
-popd
-
-# Fix mt76 wireless driver
-pushd package/kernel/mt76
-sed -i '/mt7662u_rom_patch.bin/a\\techo mt76-usb disable_usb_sg=1 > $\(1\)\/etc\/modules.d\/mt76-usb' Makefile
 popd
 
 # Add po2lmo
