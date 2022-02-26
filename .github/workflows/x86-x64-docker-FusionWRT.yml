@@ -92,7 +92,6 @@ jobs:
         then
             echo "CONFIG_ALL_NONSHARED=y" >> .config
         fi
-        ../scripts/modify_config.sh
         cat .config
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
