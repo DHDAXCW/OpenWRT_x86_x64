@@ -60,7 +60,6 @@ jobs:
       with:
         ccache: 'true'
         prefix: ${{ github.workspace }}/openwrt
-        clean: 'true'
 
     - name: Update Feeds
       id: update
