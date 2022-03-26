@@ -6,6 +6,7 @@ svn export https://github.com/openwrt/packages/trunk/utils/runc/Makefile ./feeds
 # fix netdata
 rm -rf ./feeds/packages/admin/netdata
 svn co https://github.com/DHDAXCW/packages/branches/ok/admin/netdata ./feeds/packages/admin/netdata
+svn co https://github.com/small-5/Openwrt-Compile/trunk/Small_5/package/ipk/luci-app-overwall ./package/lean/luci-app-overwall
 
 # Clone community packages to package/community
 mkdir package/community
