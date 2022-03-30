@@ -6,7 +6,6 @@ svn export https://github.com/openwrt/packages/trunk/utils/runc/Makefile ./feeds
 # fix netdata
 rm -rf ./feeds/packages/admin/netdata
 svn co https://github.com/DHDAXCW/packages/branches/ok/admin/netdata ./feeds/packages/admin/netdata
-svn co https://github.com/small-5/Openwrt-Compile/trunk/Small_5/package/ipk/luci-app-overwall ./package/lean/luci-app-overwall
 
 # Clone community packages to package/community
 mkdir package/community
@@ -91,7 +90,7 @@ cp -f $GITHUB_WORKSPACE/data/bg1.jpg luci-theme-argon/htdocs/luci-static/argon/i
 git clone --depth=1 https://github.com/tindy2013/openwrt-subconverter
 
 # Add luci-app-smartdns & smartdns
-svn co https://github.com/281677160/openwrt-package/trunk/feeds/luci/applications/luci-app-smartdns
+svn co https://github.com/281677160/openwrt-package/trunk/luci-app-smartdns
 
 # Add apk (Apk Packages Manager)
 svn co https://github.com/openwrt/packages/trunk/utils/apk
