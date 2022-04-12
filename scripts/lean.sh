@@ -21,7 +21,7 @@ rm -rf openwrt-package/verysync
 rm -rf openwrt-package/luci-app-verysync
 
 # Add luci-app-ssr-plus
-git clone --depth=1 https://github.com/fw876/helloworld.git
+git clone --depth=1 https://github.com/DHDAXCW/helloworld
 
 # Add luci-app-unblockneteasemusic
 rm -rf ../../customfeeds/luci/applications/luci-app-unblockmusic
