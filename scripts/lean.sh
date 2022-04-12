@@ -7,6 +7,9 @@ svn export https://github.com/openwrt/packages/trunk/utils/runc/Makefile ./feeds
 rm -rf ./feeds/packages/admin/netdata
 svn co https://github.com/DHDAXCW/packages/branches/ok/admin/netdata ./feeds/packages/admin/netdata
 
+# Add luci-app-passwall
+git clone --depth=1 https://github.com/MilesPoupart/openwrt-passwall ./package/lean/openwrt-passwall
+
 # Clone community packages to package/community
 mkdir package/community
 pushd package/community
