@@ -19,7 +19,7 @@ env:
 
 jobs:
   Build:
-    runs-on: ubuntu-20.04
+    runs-on: self-hosted
     if: github.repository == 'DHDAXCW/FusionWRT_x86_x64'
     outputs:
       OPENWRTROOT: ${{ steps.update.outputs.OPENWRTROOT }}
