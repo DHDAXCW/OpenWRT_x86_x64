@@ -89,10 +89,6 @@ jobs:
       id: package
       run: |
         cd $OPENWRTROOT
-        if "$KMODS_IN_FIRMWARE" = 'true'
-        then
-            echo "CONFIG_ALL_NONSHARED=y" >> .config
-        fi
         cat .config
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
