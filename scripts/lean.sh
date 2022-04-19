@@ -7,6 +7,11 @@ svn export https://github.com/openwrt/packages/trunk/utils/runc/Makefile ./feeds
 rm -rf ./feeds/packages/admin/netdata
 svn co https://github.com/DHDAXCW/packages/branches/ok/admin/netdata ./feeds/packages/admin/netdata
 
+# Addd mosdns
+svn export https://github.com/QiuSimons/openwrt-mos/trunk/mosdns package/lean/mosdns
+svn export https://github.com/QiuSimons/openwrt-mos/trunk/luci-app-mosdns package/lean/luci-app-mosdns
+svn export https://github.com/QiuSimons/openwrt-mos/trunk/v2ray-geodata package/lean/v2ray-geodata
+
 # Add luci-app-passwall
 git clone --depth=1 https://github.com/MilesPoupart/openwrt-passwall ./package/lean/openwrt-passwall
 
