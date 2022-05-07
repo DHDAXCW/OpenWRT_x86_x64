@@ -9,8 +9,8 @@ on:
   #   types: started
 
 env:
-  REPO_URL: https://github.com/LPDDR6-10000MHz/lede
-  REPO_BRANCH: flash
+  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_BRANCH: master
   CONFIG_FILE: configs/lean/lean_docker.config
   DIY_SH: scripts/lean.sh
   KMODS_IN_FIRMWARE: true
