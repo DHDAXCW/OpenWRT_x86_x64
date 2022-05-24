@@ -84,11 +84,6 @@ jobs:
       id: compile
       run: |
         cd $OPENWRTROOT
-        rm -rf bin/targets/x86/64/openwrt-x86-64-generic-kernel.bin
-        rm -rf bin/targets/x86/64/openwrt-x86-64-generic-rootfs.tar.gz
-        rm -rf bin/targets/x86/64/openwrt-x86-64-generic-squashfs-combined-efi.vmdk
-        rm -rf bin/targets/x86/64/openwrt-x86-64-generic-squashfs-rootfs.img.gz
-        rm -rf bin/targets/x86/64/openwrt-x86-64-generic.manifest
         echo -e "$(nproc) thread compile"
         make tools/compile -j$(nproc) || make tools/compile -j72
         make toolchain/compile -j$(nproc) || make toolchain/compile -j72
@@ -137,6 +132,11 @@ jobs:
         sed -i "s/http:\/\/192.168.123.100:2345\/snapshots/https:\/\/openwrt.cc\/snapshots\/$(date +"%Y-%m-%d")\/lean/g" files/etc/opkg/distfeeds.conf.mirror
         make package/install -j$(nproc) || make package/install -j1 V=s
         make target/install -j$(nproc) || make target/install -j1 V=s
+        rm -rf bin/targets/x86/64/openwrt-x86-64-generic-kernel.bin
+        rm -rf bin/targets/x86/64/openwrt-x86-64-generic-rootfs.tar.gz
+        rm -rf bin/targets/x86/64/openwrt-x86-64-generic-squashfs-combined-efi.vmdk
+        rm -rf bin/targets/x86/64/openwrt-x86-64-generic-squashfs-rootfs.img.gz
+        rm -rf bin/targets/x86/64/openwrt-x86-64-generic.manifest
         make checksum
         echo "::set-output name=GENERATE_STATUS::success"
 
