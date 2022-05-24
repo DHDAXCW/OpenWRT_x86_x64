@@ -103,12 +103,6 @@ rm -rf libssh
 svn co https://github.com/openwrt/packages/trunk/libs/libssh
 popd
 
-# Add po2lmo
-git clone --depth=1 https://github.com/openwrt-dev/po2lmo.git
-pushd po2lmo
-make && sudo make install
-popd
-
 # Change default shell to zsh
 sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
 
