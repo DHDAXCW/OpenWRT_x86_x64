@@ -32,24 +32,10 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@main
-
-    - name: Initialization Environment
-      env:
-        DEBIAN_FRONTEND: noninteractive
-      run: |
-        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
-        sudo -E apt-get -qq update
-        sudo -E apt-get -qq install $(curl -fsSL git.io/depends-ubuntu-2004) tree
-        sudo apt-get -y install python3 git-core curl
-        sudo -E apt-get -qq autoremove --purge
-        sudo -E apt-get -qq clean
-        sudo timedatectl set-timezone "$TZ"
         
     - name: Clone Source Code
       run: |
         df -hT $PWD
-        git config --global user.email "git@github.com"
-        git config --global user.name "GitHub"
         git clone $REPO_URL -b $REPO_BRANCH openwrt
     - name: Update Feeds
       id: update
