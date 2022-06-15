@@ -50,10 +50,6 @@ jobs:
         chmod +x ../scripts/*.sh
         ../scripts/hook-feeds.sh
         
-    - name: MOD index file
-      run: |
-         cd $OPENWRTROOT/package/lean/autocore/files/x86
-         sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:Telegram %></td><td><a href="https://t.me/DHDAXCW"><%:电报交流群%></a></td></tr>' index.htm
     - name: Install Feeds
       run: |
         cd $OPENWRTROOT
