@@ -42,10 +42,10 @@ git clone --depth=1 https://github.com/rufengsuixing/luci-app-onliner
 svn co https://github.com/Lienol/openwrt-package/branches/other/luci-app-adguardhome
 
 # Add ddnsto & linkease
-svn co https://github.com/linkease/nas-packages-luci/trunk/luci/luci-app-ddnsto
-svn co https://github.com/linkease/nas-packages-luci/trunk/luci/luci-app-linkease
-svn co https://github.com/linkease/nas-packages/trunk/network/services/ddnsto
-svn co https://github.com/linkease/nas-packages/trunk/network/services/linkease
+svn co https://github.com/DHDAXCW/nas-packages-luci/trunk/luci/luci-app-ddnsto
+svn co https://github.com/DHDAXCW/nas-packages-luci/trunk/luci/luci-app-linkease
+svn co https://github.com/DHDAXCW/nas-packages/trunk/network/services/ddnsto
+svn co https://github.com/DHDAXCW/nas-packages/trunk/network/services/linkease
 
 # Add OpenClash
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
