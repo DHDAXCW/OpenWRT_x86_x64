@@ -1,5 +1,5 @@
 # x86-x64 每天自动更新插件和内核版本。
-# 我使用的机场 https://i.73sd.top/ExU6  稳定
+# 我使用的机场 [https://www.easy2022.com](https://www.easy2022.com/#/register?code=Ut7iWMrk)
 ## 👉使用本固件前，请严格遵守国家互联网使用相关法律规定,不要违反国家法律规定！👈
 ### 默认编译  
 - 用户名：root 密码：password  管理IP：192.168.11.1
