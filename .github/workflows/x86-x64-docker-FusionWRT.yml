@@ -28,7 +28,6 @@ env:
 jobs:
   Build:
     runs-on: self-hosted
-    if: github.repository == 'DHDAXCW/FusionWRT_x86_x64'
     outputs:
       OPENWRTROOT: ${{ steps.update.outputs.OPENWRTROOT }}
       PLATFORM: ${{ steps.compile.outputs.PLATFORM }}
