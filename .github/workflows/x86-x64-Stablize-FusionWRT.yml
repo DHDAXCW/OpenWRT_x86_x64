@@ -136,7 +136,6 @@ jobs:
         rm -rf bin/targets/x86/64/openwrt-x86-64-generic-kernel.bin
         rm -rf bin/targets/x86/64/openwrt-x86-64-generic-rootfs.tar.gz
         rm -rf bin/targets/x86/64/openwrt-x86-64-generic-squashfs-combined-efi.vmdk
-        rm -rf bin/targets/x86/64/openwrt-x86-64-generic-squashfs-rootfs.img.gz
         rm -rf bin/targets/x86/64/openwrt-x86-64-generic.manifest
         make checksum
         echo "::set-output name=GENERATE_STATUS::success"
