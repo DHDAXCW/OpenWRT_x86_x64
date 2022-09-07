@@ -77,7 +77,7 @@ jobs:
       run: |
         cd $OPENWRTROOT
         cat .config
-        make download -j8
+        make download -j50
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
   
