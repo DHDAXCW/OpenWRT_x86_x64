@@ -145,6 +145,7 @@ jobs:
         mv openwrt-x86-64-generic-squashfs-combined-efi.img.gz beggar-x86-64-squashfs-efi.img.gz
         popd
         make checksum
+        mv bin/targets/x86/64/sha256sums bin/targets/x86/64/beggar-sha256sums
         echo "::set-output name=GENERATE_STATUS::success"
 
     - name: Generate release tag
