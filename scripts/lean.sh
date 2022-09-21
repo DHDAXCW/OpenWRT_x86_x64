@@ -117,3 +117,6 @@ sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_genera
 
 # Test kernel 5.19
 # sed -i 's/5.15/5.19/g' target/linux/x86/Makefile
+
+# 替换默认主题为 luci-theme-argon
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/' feeds/luci/collections/luci/Makefile
