@@ -18,8 +18,8 @@ rm -rf openwrt-package/verysync
 rm -rf openwrt-package/luci-app-verysync
 
 # Add luci-app-ssr-plus
-# git clone --depth=1 https://github.com/fw876/helloworld
-git clone --depth=1 https://github.com/DHDAXCW/helloworld
+git clone --depth=1 https://github.com/fw876/helloworld
+
 # Add luci-app-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
 svn co https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall
@@ -116,7 +116,7 @@ sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
 sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_generate
 
 # Test kernel 5.19
-# sed -i 's/5.15/5.19/g' target/linux/x86/Makefile
+sed -i 's/5.15/5.19/g' target/linux/x86/Makefile
 
 # 替换默认主题为 luci-theme-argon
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/' feeds/luci/collections/luci/Makefile
