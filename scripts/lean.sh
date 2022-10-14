@@ -8,6 +8,13 @@
 # Blog: https://mlapp.cn
 #=================================================
 # Clone community packages to package/community
+
+# alist
+git clone https://github.com/sbwml/luci-app-alist package/alist
+pushd package/alist
+git reset --hard ee858b79c07af9994e4476dc7c08593c4610485d
+popd
+
 mkdir package/community
 pushd package/community
 
@@ -58,15 +65,8 @@ git clone --depth=1 https://github.com/lisaac/luci-lib-docker
 # Add luci-app-poweroff
 git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff
 
-# alist
-git clone https://github.com/sbwml/openwrt-alist --depth=1
-
-# Add luci-theme-argon
-git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon
-git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config
-rm -rf ../../customfeeds/luci/themes/luci-theme-argon
-rm -rf ./luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
-cp -f $GITHUB_WORKSPACE/data/bg1.jpg luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+# Add luci-theme
+git clone https://github.com/DHDAXCW/theme
 
 # Add subconverter
 git clone --depth=1 https://github.com/tindy2013/openwrt-subconverter
@@ -117,6 +117,3 @@ sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_genera
 
 # Test kernel 5.19
 sed -i 's/5.15/5.19/g' target/linux/x86/Makefile
-
-# 替换默认主题为 luci-theme-argon
-sed -i 's/luci-theme-bootstrap/luci-theme-argon/' feeds/luci/collections/luci/Makefile
