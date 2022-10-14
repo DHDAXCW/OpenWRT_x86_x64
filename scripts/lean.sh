@@ -11,9 +11,6 @@
 
 # alist
 git clone https://github.com/sbwml/luci-app-alist package/alist
-pushd package/alist
-git reset --hard ee858b79c07af9994e4476dc7c08593c4610485d
-popd
 
 mkdir package/community
 pushd package/community
