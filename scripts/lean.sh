@@ -66,6 +66,7 @@ git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff
 
 # Add luci-theme
 git clone https://github.com/DHDAXCW/theme
+git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config
 
 # Add subconverter
 git clone --depth=1 https://github.com/tindy2013/openwrt-subconverter
