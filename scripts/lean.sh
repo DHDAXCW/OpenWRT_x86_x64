@@ -118,4 +118,4 @@ sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_genera
 # Test kernel 6.0
 rm -rf target/linux/x86/base-files/etc/board.d/02_network
 wget -P target/linux/x86/base-files/etc/board.d https://raw.githubusercontent.com/DHDAXCW/lede/patch-1/target/linux/x86/base-files/etc/board.d/02_network
-sed -i 's/5.15/6.0/g' target/linux/x86/Makefile
+#sed -i 's/5.15/6.0/g' target/linux/x86/Makefile
