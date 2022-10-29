@@ -38,7 +38,7 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@main
+      uses: actions/checkout@v3
         
     - name: Clone Source Code
       run: |
@@ -49,7 +49,7 @@ jobs:
       run: |
         cd openwrt
         echo "OPENWRTROOT=$PWD" >> $GITHUB_ENV
-        echo "::set-output name=OPENWRTROOT::$(echo $PWD)"
+        echo "OPENWRTROOT=$PWD" >> $GITHUB_OUTPUT
         mkdir customfeeds
         git clone --depth=1 https://github.com/coolsnowwolf/packages customfeeds/packages
         git clone --depth=1 https://github.com/coolsnowwolf/luci customfeeds/luci
@@ -95,18 +95,18 @@ jobs:
         cd $OPENWRTROOT/bin/packages/*
         PLATFORM=$(basename `pwd`)
         echo "PLATFORM=$PLATFORM" >> $GITHUB_ENV
-        echo "::set-output name=PLATFORM::$(echo $PLATFORM)"
+        echo "PLATFORM=$PLATFORM" >> $GITHUB_OUTPUT
         cd $OPENWRTROOT/bin/targets/*
         TARGET=$(basename `pwd`)
         echo "TARGET=$TARGET" >> $GITHUB_ENV
-        echo "::set-output name=TARGET::$(echo $TARGET)"
+        echo "TARGET=$TARGET" >> $GITHUB_OUTPUT
         cd *
         SUBTARGET=$(basename `pwd`)
         echo "SUBTARGET=$SUBTARGET" >> $GITHUB_ENV
-        echo "::set-output name=SUBTARGET::$(echo $SUBTARGET)"
+        echo "SUBTARGET=$SUBTARGET" >> $GITHUB_OUTPUT
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
-        echo "::set-output name=FIRMWARE::$(echo $PWD)"
-        echo "::set-output name=COMPILE_STATUS::success"
+        echo "FIRMWARE=$PWD" >> $GITHUB_OUTPUT
+        echo "COMPILE_STATUS=success" >> $GITHUB_OUTPUT
         
     - name: Generate Firmware
       if: steps.compile.outputs.COMPILE_STATUS == 'success'
@@ -145,21 +145,22 @@ jobs:
         popd
         make checksum
         mv bin/targets/x86/64/sha256sums bin/targets/x86/64/beggar-sha256sums
-        echo "::set-output name=GENERATE_STATUS::success"
+        echo "GENERATE_STATUS=success" >> $GITHUB_OUTPUT
 
     - name: Generate release tag
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-          echo "::set-output name=release_tag::$(date +"%Y.%m.%d")-Lean1"
-          echo "::set-output name=release_date::$(date +"%Y.%m.%d")"
+          echo "release_tag=$(date +"%Y.%m.%d")-Lean2" >> $GITHUB_OUTPUT
+          echo "release_date=$(date +"%Y.%m.%d")" >> $GITHUB_OUTPUT
           touch release.txt
           echo "后台地址：192.168.11.1
                 full=全插件
                 docker=带docker
                 slim=精简版
                 beggar=乞丐版" >> release.txt
-          echo "::set-output name=status::success"
+          echo "status=success" >> $GITHUB_OUTPUT
+          
     - name: Upload firmware to release
       uses: softprops/action-gh-release@v1
       if: steps.tag.outputs.status == 'success' && !cancelled()
