@@ -49,6 +49,7 @@ jobs:
       id: update
       run: |
         cd openwrt
+        git reset --hard 37c134045bd70a1f99b878ee2d63affd09ea112a
         echo "OPENWRTROOT=$PWD" >> $GITHUB_ENV
         echo "OPENWRTROOT=$PWD" >> $GITHUB_OUTPUT
         mkdir customfeeds
