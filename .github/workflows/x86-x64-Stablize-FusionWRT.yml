@@ -17,8 +17,8 @@ on:
   #   types: started
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: master
+  REPO_URL: https://github.com/DHDAXCW/lede
+  REPO_BRANCH: 5.15.74
   CONFIG_FILE: configs/lean/lean_stable.config
   DIY_SH: scripts/lean.sh
   KMODS_IN_FIRMWARE: true
@@ -49,7 +49,6 @@ jobs:
       id: update
       run: |
         cd openwrt
-        git reset --hard 37c134045bd70a1f99b878ee2d63affd09ea112a
         echo "OPENWRTROOT=$PWD" >> $GITHUB_ENV
         echo "OPENWRTROOT=$PWD" >> $GITHUB_OUTPUT
         mkdir customfeeds
