@@ -65,8 +65,13 @@ git clone --depth=1 https://github.com/lisaac/luci-lib-docker
 git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff
 
 # Add luci-theme
-git clone https://github.com/DHDAXCW/theme
+git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon
 git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config
+rm -rf ../../customfeeds/luci/themes/luci-theme-argon
+rm -rf ../../customfeeds/luci/themes/luci-theme-argon-mod
+rm -rf ./luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+cp -f $GITHUB_WORKSPACE/data/bg1.jpg luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+git clone https://github.com/DHDAXCW/theme
 
 # Add subconverter
 git clone --depth=1 https://github.com/tindy2013/openwrt-subconverter
