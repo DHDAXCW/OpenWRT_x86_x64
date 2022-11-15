@@ -88,11 +88,11 @@ jobs:
       run: |
         cd $OPENWRTROOT
         echo -e "$(nproc) thread compile"
-        make tools/compile -j$(nproc) || make tools/compile -j16
-        make toolchain/compile -j$(nproc) || make toolchain/compile -j16
-        make target/compile -j$(nproc) || make target/compile -j16 IGNORE_ERRORS=1
+        make tools/compile -j$(nproc) || make tools/compile -j40
+        make toolchain/compile -j$(nproc) || make toolchain/compile -j40
+        make target/compile -j$(nproc) || make target/compile -j40 IGNORE_ERRORS=1
         make diffconfig
-        make package/compile -j$(nproc) IGNORE_ERRORS=1 || make package/compile -j16 IGNORE_ERRORS=1
+        make package/compile -j$(nproc) IGNORE_ERRORS=1 || make package/compile -j40 IGNORE_ERRORS=1
         make package/index
         cd $OPENWRTROOT/bin/packages/*
         PLATFORM=$(basename `pwd`)
