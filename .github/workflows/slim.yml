@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: x86-x64-Stablize-FusionWRT
+name: x86-x64-精简版
 
 on:
   repository_dispatch:
@@ -157,10 +157,10 @@ jobs:
           echo "release_date=$(date +"%Y.%m.%d")" >> $GITHUB_OUTPUT
           touch release.txt
           echo "后台地址：192.168.11.1
-                full=全插件
-                docker=带docker
-                slim=精简版
-                beggar=乞丐版" >> release.txt
+                full   = 全插件
+                docker = 带docker
+                slim   = 精简版
+                beggar = 乞丐版" >> release.txt
           echo "status=success" >> $GITHUB_OUTPUT
           
     - name: Upload firmware to release
