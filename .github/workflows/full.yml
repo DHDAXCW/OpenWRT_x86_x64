@@ -44,6 +44,7 @@ jobs:
       run: |
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
+        git reset --hard 3d8184bdf3a3e27e06871847d90f770d60927c50
 
     - name: Update Feeds
       id: update
