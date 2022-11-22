@@ -17,7 +17,7 @@ on:
   #   types: started
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: git@github.com:DHDAXCW/thanks-lean.git
   REPO_BRANCH: master
   CONFIG_FILE: configs/lean/lean_beggar.config
   DIY_SH: scripts/lean.sh
