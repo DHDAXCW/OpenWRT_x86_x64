@@ -13,7 +13,7 @@
 git clone https://github.com/sbwml/luci-app-alist package/alist
 rm -rf feeds/packages/lang/golang
 svn export https://github.com/sbwml/packages_lang_golang/branches/19.x feeds/packages/lang/golang
-#rm -rf package/kernel/mac80211
+
 mkdir package/community
 pushd package/community
 
@@ -29,7 +29,7 @@ git clone --depth=1 https://github.com/fw876/helloworld
 # Add luci-app-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2
-svn co https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall
+svn export https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall
 
 # Add luci-app-unblockneteasemusic
 rm -rf ../../customfeeds/luci/applications/luci-app-unblockmusic
@@ -46,14 +46,14 @@ git clone --depth=1 https://github.com/ysc3839/luci-proto-minieap
 git clone --depth=1 https://github.com/rufengsuixing/luci-app-onliner
 
 # Add luci-app-adguardhome
-svn co https://github.com/Lienol/openwrt-package/branches/other/luci-app-adguardhome
+svn export https://github.com/DHDAXCW/openwrt-packages/trunk/luci-app-adguardhome
 
 # Add ddnsto & linkease
-svn co https://github.com/linkease/nas-packages-luci/trunk/luci/luci-app-ddnsto
-svn co https://github.com/linkease/nas-packages/trunk/network/services/ddnsto
+svn export https://github.com/linkease/nas-packages-luci/trunk/luci/luci-app-ddnsto
+svn export https://github.com/linkease/nas-packages/trunk/network/services/ddnsto
 
 # Add OpenClash
-svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
+svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
 
 # Add luci-app-dockerman
 rm -rf ../../customfeeds/luci/collections/luci-lib-docker
@@ -81,10 +81,10 @@ git clone --depth=1 https://github.com/tindy2013/openwrt-subconverter
 git clone https://github.com/sbwml/openwrt-alist --depth=1
 
 # Add luci-app-smartdns & smartdns
-svn co https://github.com/281677160/openwrt-package/trunk/luci-app-smartdns
+svn export https://github.com/281677160/openwrt-package/trunk/luci-app-smartdns
 
 # Add apk (Apk Packages Manager)
-svn co https://github.com/openwrt/packages/trunk/utils/apk
+svn export https://github.com/openwrt/packages/trunk/utils/apk
 
 # Add OpenAppFilter
 git clone --depth=1 https://github.com/destan19/OpenAppFilter
@@ -98,7 +98,7 @@ popd
 
 # Add Pandownload
 pushd package/lean
-svn co https://github.com/immortalwrt/packages/trunk/net/pandownload-fake-server
+svn export https://github.com/immortalwrt/packages/trunk/net/pandownload-fake-server
 popd
 
 # Mod zzz-default-settings
@@ -113,7 +113,7 @@ popd
 # Fix libssh
 pushd feeds/packages/libs
 rm -rf libssh
-svn co https://github.com/openwrt/packages/trunk/libs/libssh
+svn export https://github.com/openwrt/packages/trunk/libs/libssh
 popd
 
 # Change default shell to zsh
