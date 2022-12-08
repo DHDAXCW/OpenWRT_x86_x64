@@ -23,6 +23,9 @@ sophos-sg-105|sophos-xg-105)
 default-string-default-string)
 	ucidef_set_interfaces_lan_wan "eth1" "eth0"
 	;;
+cwwk-minipc-g4)
+	ucidef_set_interfaces_lan_wan "eth1 eth2 eth3" "eth0"
+	;;
 traverse-technologies-geos)
 	ucidef_set_interface_lan "eth0 eth1"
 	ucidef_add_atm_bridge "0" "35" "llc" "bridged"
