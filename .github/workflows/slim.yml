@@ -52,7 +52,7 @@ jobs:
         echo "OPENWRTROOT=$PWD" >> $GITHUB_ENV
         echo "OPENWRTROOT=$PWD" >> $GITHUB_OUTPUT
         mkdir customfeeds
-        git clone --depth=1 https://github.com/DHDAXCW/packages customfeeds/packages
+        git clone --depth=1 https://github.com/coolsnowwolf/packages customfeeds/packages
         git clone --depth=1 https://github.com/DHDAXCW/luci customfeeds/luci
         chmod +x ../scripts/*.sh
         ../scripts/hook-feeds.sh
