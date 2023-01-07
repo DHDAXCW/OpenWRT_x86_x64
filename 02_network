@@ -20,7 +20,7 @@ brounion-r86s)
 sophos-sg-105|sophos-xg-105)
 	ucidef_set_interfaces_lan_wan "eth0 eth2 eth3" "eth1"
 	;;
-default-string-default-string)
+default-string)
 	ucidef_set_interfaces_lan_wan "eth1" "eth0"
 	;;
 cwwk-minipc-g4)
