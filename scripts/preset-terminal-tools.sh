@@ -12,7 +12,7 @@ pushd files/root
 
 ## Install oh-my-zsh
 # Clone oh-my-zsh repository
-git clone https://github.com/robbyrussell/oh-my-zsh ./.oh-my-zsh
+git clone https://github.com/ohmyzsh/ohmyzsh ./.oh-my-zsh
 
 # Install extra plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions ./.oh-my-zsh/custom/plugins/zsh-autosuggestions
