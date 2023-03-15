@@ -14,7 +14,7 @@ Signed-off-by: Paolo Abeni <pabeni@redhat.com>
 
 --- a/drivers/net/ethernet/mediatek/mtk_eth_soc.c
 +++ b/drivers/net/ethernet/mediatek/mtk_eth_soc.c
-@@ -3702,6 +3702,11 @@ static void mtk_pending_work(struct work
+@@ -3929,6 +3929,11 @@ static void mtk_pending_work(struct work
  	set_bit(MTK_RESETTING, &eth->state);
  
  	mtk_prepare_for_reset(eth);
@@ -26,7 +26,7 @@ Signed-off-by: Paolo Abeni <pabeni@redhat.com>
  
  	/* stop all devices to make sure that dma is properly shut down */
  	for (i = 0; i < MTK_MAC_COUNT; i++) {
-@@ -3739,6 +3744,8 @@ static void mtk_pending_work(struct work
+@@ -3966,6 +3971,8 @@ static void mtk_pending_work(struct work
  
  	clear_bit(MTK_RESETTING, &eth->state);
  

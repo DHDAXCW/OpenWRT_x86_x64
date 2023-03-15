@@ -12,7 +12,7 @@ Signed-off-by: David S. Miller <davem@davemloft.net>
 
 --- a/drivers/net/ethernet/mediatek/mtk_eth_soc.c
 +++ b/drivers/net/ethernet/mediatek/mtk_eth_soc.c
-@@ -3494,11 +3494,8 @@ static void mtk_pending_work(struct work
+@@ -3721,11 +3721,8 @@ static void mtk_pending_work(struct work
  	rtnl_lock();
  
  	dev_dbg(eth->dev, "[%s][%d] reset\n", __func__, __LINE__);
@@ -25,7 +25,7 @@ Signed-off-by: David S. Miller <davem@davemloft.net>
  	/* stop all devices to make sure that dma is properly shut down */
  	for (i = 0; i < MTK_MAC_COUNT; i++) {
  		if (!eth->netdev[i])
-@@ -3532,7 +3529,7 @@ static void mtk_pending_work(struct work
+@@ -3759,7 +3756,7 @@ static void mtk_pending_work(struct work
  
  	dev_dbg(eth->dev, "[%s][%d] reset done\n", __func__, __LINE__);
  
