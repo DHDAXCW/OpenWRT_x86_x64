@@ -17,7 +17,7 @@ on:
   #   types: started
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/DHDAXCW/lede
   REPO_BRANCH: master
   CONFIG_FILE: configs/lean/lean_docker.config
   DIY_SH: scripts/lean.sh
