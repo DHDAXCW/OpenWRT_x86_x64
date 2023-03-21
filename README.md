@@ -8,6 +8,8 @@
 # 插件展示
  ![Alt text](scripts/20.png?raw=true "Title")
 
+# 完美支持aw7916 minipcie电流要求3a以上才不会掉卡
+
 # [赏个鸡腿吧](https://afdian.net/@dhdaxcw/plan)
 ### https://afdian.net/@dhdaxcw/plan
 ## 鸣谢
