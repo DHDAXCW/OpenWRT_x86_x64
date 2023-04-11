@@ -49,7 +49,7 @@ Signed-off-by: Paolo Abeni <pabeni@redhat.com>
  };
  
  /* strings used by ethtool */
-@@ -3560,6 +3566,102 @@ static void mtk_hw_warm_reset(struct mtk
+@@ -3561,6 +3567,102 @@ static void mtk_hw_warm_reset(struct mtk
  			val, rst_mask);
  }
  
@@ -152,7 +152,7 @@ Signed-off-by: Paolo Abeni <pabeni@redhat.com>
  static int mtk_hw_init(struct mtk_eth *eth, bool reset)
  {
  	u32 dma_mask = ETHSYS_DMA_AG_MAP_PDMA | ETHSYS_DMA_AG_MAP_QDMA |
-@@ -3908,6 +4010,7 @@ static int mtk_cleanup(struct mtk_eth *e
+@@ -3909,6 +4011,7 @@ static int mtk_cleanup(struct mtk_eth *e
  	mtk_unreg_dev(eth);
  	mtk_free_dev(eth);
  	cancel_work_sync(&eth->pending_work);
@@ -160,7 +160,7 @@ Signed-off-by: Paolo Abeni <pabeni@redhat.com>
  
  	return 0;
  }
-@@ -4362,6 +4465,7 @@ static int mtk_probe(struct platform_dev
+@@ -4363,6 +4466,7 @@ static int mtk_probe(struct platform_dev
  
  	eth->rx_dim.mode = DIM_CQ_PERIOD_MODE_START_FROM_EQE;
  	INIT_WORK(&eth->rx_dim.work, mtk_dim_rx);
@@ -168,7 +168,7 @@ Signed-off-by: Paolo Abeni <pabeni@redhat.com>
  
  	eth->tx_dim.mode = DIM_CQ_PERIOD_MODE_START_FROM_EQE;
  	INIT_WORK(&eth->tx_dim.work, mtk_dim_tx);
-@@ -4566,6 +4670,8 @@ static int mtk_probe(struct platform_dev
+@@ -4567,6 +4671,8 @@ static int mtk_probe(struct platform_dev
  	netif_napi_add(&eth->dummy_dev, &eth->rx_napi, mtk_napi_rx);
  
  	platform_set_drvdata(pdev, eth);
@@ -188,7 +188,7 @@ Signed-off-by: Paolo Abeni <pabeni@redhat.com>
  /* QDMA Interrupt grouping registers */
  #define MTK_RLS_DONE_INT	BIT(0)
  
-@@ -565,6 +567,17 @@
+@@ -566,6 +568,17 @@
  #define MT7628_SDM_RBCNT	(MT7628_SDM_OFFSET + 0x10c)
  #define MT7628_SDM_CS_ERR	(MT7628_SDM_OFFSET + 0x110)
  
@@ -206,7 +206,7 @@ Signed-off-by: Paolo Abeni <pabeni@redhat.com>
  struct mtk_rx_dma {
  	unsigned int rxd1;
  	unsigned int rxd2;
-@@ -967,6 +980,7 @@ struct mtk_reg_map {
+@@ -968,6 +981,7 @@ struct mtk_reg_map {
  		u32	delay_irq;	/* delay interrupt */
  		u32	irq_status;	/* interrupt status */
  		u32	irq_mask;	/* interrupt mask */
@@ -214,7 +214,7 @@ Signed-off-by: Paolo Abeni <pabeni@redhat.com>
  		u32	int_grp;
  	} pdma;
  	struct {
-@@ -995,6 +1009,8 @@ struct mtk_reg_map {
+@@ -996,6 +1010,8 @@ struct mtk_reg_map {
  	u32	gdma_to_ppe;
  	u32	ppe_base;
  	u32	wdma_base[2];
@@ -223,7 +223,7 @@ Signed-off-by: Paolo Abeni <pabeni@redhat.com>
  };
  
  /* struct mtk_eth_data -	This is the structure holding all differences
-@@ -1037,6 +1053,8 @@ struct mtk_soc_data {
+@@ -1038,6 +1054,8 @@ struct mtk_soc_data {
  	} txrx;
  };
  
@@ -232,7 +232,7 @@ Signed-off-by: Paolo Abeni <pabeni@redhat.com>
  /* currently no SoC has more than 2 macs */
  #define MTK_MAX_DEVS			2
  
-@@ -1161,6 +1179,14 @@ struct mtk_eth {
+@@ -1162,6 +1180,14 @@ struct mtk_eth {
  	struct rhashtable		flow_table;
  
  	struct bpf_prog			__rcu *prog;
