@@ -129,7 +129,7 @@ sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_genera
 # Test kernel 6.1
 rm -rf target/linux/x86/base-files/etc/board.d/02_network
 cp -f $GITHUB_WORKSPACE/02_network target/linux/x86/base-files/etc/board.d/02_network
-sed -i 's/5.15/6.1/g' target/linux/x86/Makefile
+# sed -i 's/5.15/6.1/g' target/linux/x86/Makefile
 rm -rf package/base-files/files/etc/banner
 wget -P package/base-files/files/etc https://raw.githubusercontent.com/DHDAXCW/lede-rockchip/stable/package/base-files/files/etc/banner
 cp -r ../target/linux/generic/pending-6.1/ ./target/linux/generic/
