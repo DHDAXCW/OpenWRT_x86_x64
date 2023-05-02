@@ -18,9 +18,6 @@ svn export https://github.com/openwrt/openwrt/trunk/package/kernel/mac80211 pack
 svn export https://github.com/DHDAXCW/OpenWRT_x86_x64/trunk/mt76 package/kernel/mt76
 svn export https://github.com/openwrt/openwrt/trunk/package/network/services/hostapd package/network/services/hostapd
 
-rm -rf package/kernel/mac80211/Makefile
-cp -f $GITHUB_WORKSPACE/Makefile package/kernel/mac80211/Makefile
-
 # alist
 git clone https://github.com/sbwml/luci-app-alist package/alist
 rm -rf feeds/packages/lang/golang
