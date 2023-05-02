@@ -15,7 +15,7 @@ rm -rf package/kernel/mt76
 rm -rf package/network/services/hostapd
 svn export https://github.com/openwrt/openwrt/trunk/package/libs/libnl-tiny package/libs/libnl-tiny
 svn export https://github.com/openwrt/openwrt/trunk/package/kernel/mac80211 package/kernel/mac80211
-svn export https://github.com/DHDAXCW/lede-rockchip/trunk/package/kernel/mt76 package/kernel/mt76
+svn export https://github.com/DHDAXCW/OpenWRT_x86_x64/trunk/mt76 package/kernel/mt76
 svn export https://github.com/openwrt/openwrt/trunk/package/network/services/hostapd package/network/services/hostapd
 
 rm -rf package/kernel/mac80211/Makefile
