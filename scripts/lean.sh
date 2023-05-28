@@ -61,13 +61,6 @@ svn export https://github.com/linkease/nas-packages/trunk/network/services/ddnst
 # Add OpenClash
 svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
 
-# Add luci-app-dockerman
-rm -rf ../../customfeeds/luci/collections/luci-lib-docker
-rm -rf ../../customfeeds/luci/applications/luci-app-docker
-rm -rf ../../customfeeds/luci/applications/luci-app-dockerman
-git clone --depth=1 https://github.com/lisaac/luci-app-dockerman
-git clone --depth=1 https://github.com/lisaac/luci-lib-docker
-
 # Add luci-app-poweroff
 git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff
 
