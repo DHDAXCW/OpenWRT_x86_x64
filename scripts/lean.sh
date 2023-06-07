@@ -13,6 +13,8 @@ rm -rf package/libs/libnl-tiny
 rm -rf package/kernel/mac80211
 rm -rf package/kernel/mt76
 rm -rf package/network/services/hostapd
+rm -rf package/wwan
+svn export https://github.com/DHDAXCW/lede-rockchip/trunk/package/wwan package/wwan
 svn export https://github.com/openwrt/openwrt/trunk/package/libs/libnl-tiny package/libs/libnl-tiny
 svn export https://github.com/openwrt/openwrt/trunk/package/kernel/mac80211 package/kernel/mac80211
 svn export https://github.com/DHDAXCW/lede-rockchip/trunk/package/kernel/mt76 package/kernel/mt76
