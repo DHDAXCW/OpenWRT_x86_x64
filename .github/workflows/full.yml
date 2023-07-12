@@ -18,7 +18,7 @@ on:
 
 env:
   REPO_URL: https://github.com/DHDAXCW/lede-rockchip
-  REPO_BRANCH: master
+  REPO_BRANCH: stable
   CONFIG_FILE: configs/lean/lean.config
   DIY_SH: scripts/lean.sh
   KMODS_IN_FIRMWARE: true
