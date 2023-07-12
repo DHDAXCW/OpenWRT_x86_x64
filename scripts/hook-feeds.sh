@@ -23,10 +23,6 @@ svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/admin/goto
 # Add minieap
 rm -rf packages/net/minieap
 svn co https://github.com/immortalwrt/packages/trunk/net/minieap packages/net/minieap
-
-# Replace smartdns with the official version
-rm -rf packages/net/smartdns
-svn co https://github.com/openwrt/packages/trunk/net/smartdns packages/net/smartdns
 popd
 
 # Set to local feeds
