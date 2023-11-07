@@ -135,7 +135,7 @@ jobs:
         make target/install -j$(nproc) || make target/install -j1 V=s
         pushd bin/targets/x86/64
         kernelv=`cat openwrt-x86-64-generic.manifest | grep 'kernel - ' |  awk -F '[- ]' '{print $4}'`
-        echo "kernel_version=$kernelv" >> $GITHUB_OUTPUT
+        echo "::set-output name=kernel_version::$kernelv"
         rm -rf openwrt-x86-64-generic-kernel.bin
         rm -rf openwrt-x86-64-generic-rootfs.tar.gz
         rm -rf openwrt-x86-64-generic-squashfs-rootfs.img.gz
