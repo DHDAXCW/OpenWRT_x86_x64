@@ -48,7 +48,7 @@ jobs:
       id: update
       run: |
         cd openwrt
-        sed -i 's/6.1/5.15/g' target/linux/rockchip/Makefile
+        sed -i 's/6.1/5.15/g' target/linux/x86/Makefile
         echo "OPENWRTROOT=$PWD" >> $GITHUB_ENV
         echo "OPENWRTROOT=$PWD" >> $GITHUB_OUTPUT
         mkdir customfeeds
