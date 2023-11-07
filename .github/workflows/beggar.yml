@@ -141,10 +141,10 @@ jobs:
         rm -rf openwrt-x86-64-generic-squashfs-rootfs.img.gz
         rm -rf openwrt-x86-64-generic-squashfs-combined-efi.vmdk
         rm -rf openwrt-x86-64-generic.manifest
-        mv openwrt-x86-64-generic-squashfs-combined-efi.img.gz $(date +"%Y.%m.%d")-beggar-x86-64-linux-6.1-squashfs-efi.img.gz
+        mv openwrt-x86-64-generic-squashfs-combined-efi.img.gz $(date +"%Y.%m.%d")-beggar-x86-64-kernel-${{ steps.generate.outputs.kernel_version }}-squashfs-efi.img.gz
         popd
         make checksum
-        mv bin/targets/x86/64/sha256sums bin/targets/x86/64/beggar-sha256sums
+        mv bin/targets/x86/64/sha256sums bin/targets/x86/64/kernel-${{ steps.generate.outputs.kernel_version }}-beggar-sha256sums
         echo "GENERATE_STATUS=success" >> $GITHUB_OUTPUT
 
     - name: Generate release tag
