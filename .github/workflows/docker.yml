@@ -142,7 +142,7 @@ jobs:
         rm -rf openwrt-x86-64-generic-squashfs-rootfs.img.gz
         rm -rf openwrt-x86-64-generic-squashfs-combined-efi.vmdk
         rm -rf openwrt-x86-64-generic.manifest
-        mv openwrt-x86-64-generic-squashfs-combined-efi.img.gz $(date +"%Y.%m.%d")-docker-x86-64-squashfs-efi.img.gz
+        mv openwrt-x86-64-generic-squashfs-combined-efi.img.gz $(date +"%Y.%m.%d")-docker-x86-64-linux-6.1-squashfs-efi.img.gz
         popd
         make checksum
         mv bin/targets/x86/64/sha256sums bin/targets/x86/64/docker-sha256sums
