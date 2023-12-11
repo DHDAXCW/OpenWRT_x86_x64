@@ -28,6 +28,7 @@ git clone --depth=1 -b main https://github.com/fw876/helloworld
 
 # add luci-app-daed
 git clone https://github.com/QiuSimons/luci-app-daed
+svn export https://github.com/immortalwrt/packages/trunk/net/daed
 
 # Add luci-app-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages
