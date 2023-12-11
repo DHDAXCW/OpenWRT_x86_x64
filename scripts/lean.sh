@@ -9,17 +9,6 @@
 #=================================================
 # Clone community packages to package/community
 
-#rm -rf package/libs/libnl-tiny
-#rm -rf package/kernel/mac80211
-#rm -rf package/kernel/mt76
-#rm -rf package/network/services/hostapd
-#rm -rf package/wwan
-#svn export https://github.com/DHDAXCW/lede-rockchip/trunk/package/wwan package/wwan
-#svn export https://github.com/openwrt/openwrt/trunk/package/libs/libnl-tiny package/libs/libnl-tiny
-#svn export https://github.com/openwrt/openwrt/trunk/package/kernel/mac80211 package/kernel/mac80211
-#svn export https://github.com/DHDAXCW/lede-rockchip/trunk/package/kernel/mt76 package/kernel/mt76
-#svn export https://github.com/openwrt/openwrt/trunk/package/network/services/hostapd package/network/services/hostapd
-
 # alist
 git clone https://github.com/sbwml/luci-app-alist package/alist
 rm -rf feeds/packages/lang/golang
@@ -36,6 +25,9 @@ rm -rf openwrt-package/luci-app-verysync
 
 # Add luci-app-ssr-plus
 git clone --depth=1 -b main https://github.com/fw876/helloworld
+
+# add luci-app-daed
+git clone https://github.com/QiuSimons/luci-app-daed
 
 # Add luci-app-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages
