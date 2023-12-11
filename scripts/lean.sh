@@ -27,8 +27,7 @@ rm -rf openwrt-package/luci-app-verysync
 git clone --depth=1 -b main https://github.com/fw876/helloworld
 
 # add luci-app-daed
-git clone https://github.com/QiuSimons/luci-app-daed
-svn export https://github.com/immortalwrt/packages/trunk/net/daed
+git clone https://github.com/sbwml/luci-app-daed-next
 
 # Add luci-app-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages
