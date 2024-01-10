@@ -49,11 +49,11 @@ git clone --depth=1 https://github.com/ysc3839/luci-proto-minieap
 git clone --depth=1 https://github.com/rufengsuixing/luci-app-onliner
 
 # Add ddnsto & linkease
-svn export https://github.com/linkease/nas-packages-luci/trunk/luci/luci-app-ddnsto
-svn export https://github.com/linkease/nas-packages/trunk/network/services/ddnsto
+svn export https://gitlab.com/Boos4721/nas-packages-luci/trunk/luci/luci-app-ddnsto
+svn export https://gitlab.com/Boos4721/nas-packages/trunk/network/services/ddnsto
 
 # Add OpenClash
-svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
+git clone --depth=1 https://github.com/vernesong/OpenClash
 
 # Add luci-app-poweroff
 git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff
@@ -71,13 +71,7 @@ git clone https://github.com/DHDAXCW/theme
 git clone --depth=1 https://github.com/tindy2013/openwrt-subconverter
 
 # alist
-git clone https://github.com/sbwml/openwrt-alist --depth=1
-
-# Add luci-app-smartdns & smartdns
-svn export https://github.com/281677160/openwrt-package/trunk/luci-app-smartdns
-
-# Add apk (Apk Packages Manager)
-svn export https://github.com/openwrt/packages/trunk/utils/apk
+git clone --depth=1 https://github.com/sbwml/openwrt-alist
 
 # Add OpenAppFilter
 git clone --depth=1 https://github.com/destan19/OpenAppFilter
@@ -85,13 +79,8 @@ git clone --depth=1 https://github.com/destan19/OpenAppFilter
 # Add luci-aliyundrive-webdav
 rm -rf ../../customfeeds/luci/applications/luci-app-aliyundrive-webdav
 rm -rf ../../customfeeds/packages/multimedia/aliyundrive-webdav
-svn export https://github.com/messense/aliyundrive-webdav/trunk/openwrt/aliyundrive-webdav
-svn export https://github.com/messense/aliyundrive-webdav/trunk/openwrt/luci-app-aliyundrive-webdav
-popd
-
-# Add Pandownload
-pushd package/lean
-svn export https://github.com/immortalwrt/packages/trunk/net/pandownload-fake-server
+svn export https://gitlab.com/Boos4721/aliyundrive-webdav/trunk/openwrt/aliyundrive-webdav
+svn export https://gitlab.com/Boos4721/aliyundrive-webdav/trunk/openwrt/luci-app-aliyundrive-webdav
 popd
 
 # Mod zzz-default-settings
@@ -101,12 +90,6 @@ sed -i '/18.06/d' zzz-default-settings
 export orig_version=$(cat "zzz-default-settings" | grep DISTRIB_REVISION= | awk -F "'" '{print $2}')
 export date_version=$(date -d "$(rdate -n -4 -p ntp.aliyun.com)" +'%Y-%m-%d')
 sed -i "s/${orig_version}/${orig_version} (${date_version})/g" zzz-default-settings
-popd
-
-# Fix libssh
-pushd feeds/packages/libs
-rm -rf libssh
-svn export https://github.com/openwrt/packages/trunk/libs/libssh
 popd
 
 # Change default shell to zsh
