@@ -72,10 +72,6 @@ git clone --depth=1 https://github.com/sbwml/openwrt-alist
 # Add OpenAppFilter
 git clone --depth=1 https://github.com/destan19/OpenAppFilter
 
-# Add ddnsto & linkease
-git clone --depth=1 https://github.com/linkease/nas-packages-luci
-git clone --depth=1 https://github.com/linkease/nas-packages
-
 # Add luci-aliyundrive-webdav
 rm -rf ../../customfeeds/luci/applications/luci-app-aliyundrive-webdav
 rm -rf ../../customfeeds/packages/multimedia/aliyundrive-webdav
@@ -89,7 +85,20 @@ sed -i '/18.06/d' zzz-default-settings
 export orig_version=$(cat "zzz-default-settings" | grep DISTRIB_REVISION= | awk -F "'" '{print $2}')
 export date_version=$(date -d "$(rdate -n -4 -p ntp.aliyun.com)" +'%Y-%m-%d')
 sed -i "s/${orig_version}/${orig_version} (${date_version})/g" zzz-default-settings
+mkdir -p linkease
 popd
+
+# Add ddnsto & linkease
+pushd package/community/linkease
+git clone --depth=1 https://github.com/linkease/nas-packages-luci
+git clone --depth=1 https://github.com/linkease/nas-packages
+cd nas-packages-luci
+rm -rf luci-app-istorex luci-app-quickstart luci-app-linkease luci-app-unishare && cd ../
+cd nas-packages/network/services
+rm -rf linkease quickstart unishare webdav2 && cd ../../ && rm -rf multimedia/ffmpeg-remux && cd ../
+popd
+
+rm -rf nas-packages-luci/luci/luci-app-istorex
 
 # Change default shell to zsh
 sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
