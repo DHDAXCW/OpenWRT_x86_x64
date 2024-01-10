@@ -48,10 +48,6 @@ git clone --depth=1 https://github.com/ysc3839/luci-proto-minieap
 # Add luci-app-onliner (need luci-app-nlbwmon)
 git clone --depth=1 https://github.com/rufengsuixing/luci-app-onliner
 
-# Add ddnsto & linkease
-svn export https://gitlab.com/Boos4721/nas-packages-luci/trunk/luci/luci-app-ddnsto
-svn export https://gitlab.com/Boos4721/nas-packages/trunk/network/services/ddnsto
-
 # Add OpenClash
 git clone --depth=1 https://github.com/vernesong/OpenClash
 
@@ -76,13 +72,16 @@ git clone --depth=1 https://github.com/sbwml/openwrt-alist
 # Add OpenAppFilter
 git clone --depth=1 https://github.com/destan19/OpenAppFilter
 
+# Add ddnsto & linkease
+git clone --depth=1 https://github.com/linkease/nas-packages-luci
+git clone --depth=1 https://github.com/linkease/nas-packages
+
 # Add luci-aliyundrive-webdav
 rm -rf ../../customfeeds/luci/applications/luci-app-aliyundrive-webdav
 rm -rf ../../customfeeds/packages/multimedia/aliyundrive-webdav
-svn export https://gitlab.com/Boos4721/aliyundrive-webdav/trunk/openwrt/aliyundrive-webdav
-svn export https://gitlab.com/Boos4721/aliyundrive-webdav/trunk/openwrt/luci-app-aliyundrive-webdav
+git clone --depth=1 https://github.com/messense/aliyundrive-webdav
 popd
-
+ 
 # Mod zzz-default-settings
 pushd package/lean/default-settings/files
 sed -i '/http/d' zzz-default-settings
