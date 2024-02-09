@@ -1,21 +1,30 @@
 #!/bin/bash
 #=================================================
-# File name: lean.sh
-# System Required: Linux
-# Version: 1.0
+# Description: DIY script
 # Lisence: MIT
-# Author: SuLingGG
-# Blog: https://mlapp.cn
+# Author: P3TERX
+# Blog: https://p3terx.com
 #=================================================
-# Clone community packages to package/community
 
 # alist
 git clone https://github.com/sbwml/luci-app-alist package/alist
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 21.x feeds/packages/lang/golang
 
+# Clone community packages to package/community
 mkdir package/community
 pushd package/community
+
+# Merge_package
+function merge_package(){
+    repo=`echo $1 | rev | cut -d'/' -f 1 | rev`
+    pkg=`echo $2 | rev | cut -d'/' -f 1 | rev`
+    # find package/ -follow -name $pkg -not -path "package/openwrt-packages/*" | xargs -rt rm -rf
+    git clone --depth=1 --single-branch $1
+    [ -d package/openwrt-packages ] || mkdir -p package/openwrt-packages
+    mv $2 package/openwrt-packages/
+    rm -rf $repo
+}
 
 # Add Lienol's Packages
 git clone --depth=1 https://github.com/Lienol/openwrt-package
@@ -48,8 +57,12 @@ git clone --depth=1 https://github.com/ysc3839/luci-proto-minieap
 # Add luci-app-onliner (need luci-app-nlbwmon)
 git clone --depth=1 https://github.com/rufengsuixing/luci-app-onliner
 
+# Add ddnsto & linkease
+svn export https://github.com/linkease/nas-packages-luci/trunk/luci/luci-app-ddnsto
+svn export https://github.com/linkease/nas-packages/trunk/network/services/ddnsto
+
 # Add OpenClash
-git clone --depth=1 https://github.com/vernesong/OpenClash
+svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
 
 # Add luci-app-poweroff
 git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff
@@ -75,10 +88,19 @@ git clone --depth=1 https://github.com/destan19/OpenAppFilter
 # Add luci-aliyundrive-webdav
 rm -rf ../../customfeeds/luci/applications/luci-app-aliyundrive-webdav
 rm -rf ../../customfeeds/packages/multimedia/aliyundrive-webdav
-git clone --depth=1 https://github.com/messense/aliyundrive-webdav
-mkdir -p linkease
+svn export https://github.com/messense/aliyundrive-webdav/trunk/openwrt/aliyundrive-webdav
+svn export https://github.com/messense/aliyundrive-webdav/trunk/openwrt/luci-app-aliyundrive-webdav
 popd
- 
+
+# Add luci-app-ddnsto
+pushd package/network/services
+git clone --depth=1 https://github.com/linkease/nas-packages-luci
+rm -rf luci/luci-app-istorex luci-app-linkease luci-app-quickstart luci-app-unishare luci-lib-iform
+git clone --depth=1 https://github.com/linkease/nas-packages
+rm -rf multimedia
+rm -rf network/services/linkease quickstart unishare webdav2
+popd
+
 # Mod zzz-default-settings
 pushd package/lean/default-settings/files
 sed -i '/http/d' zzz-default-settings
@@ -87,18 +109,6 @@ export orig_version=$(cat "zzz-default-settings" | grep DISTRIB_REVISION= | awk 
 export date_version=$(date -d "$(rdate -n -4 -p ntp.aliyun.com)" +'%Y-%m-%d')
 sed -i "s/${orig_version}/${orig_version} (${date_version})/g" zzz-default-settings
 popd
-
-# Add ddnsto & linkease
-pushd package/community/linkease
-git clone --depth=1 https://github.com/linkease/nas-packages-luci
-git clone --depth=1 https://github.com/linkease/nas-packages
-cd nas-packages-luci
-rm -rf luci-app-istorex luci-app-quickstart luci-app-linkease luci-app-unishare && cd ../
-cd nas-packages/network/services
-rm -rf linkease quickstart unishare webdav2 && cd ../../ && rm -rf multimedia/ffmpeg-remux && cd ../
-popd
-
-rm -rf nas-packages-luci/luci/luci-app-istorex
 
 # Change default shell to zsh
 sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
