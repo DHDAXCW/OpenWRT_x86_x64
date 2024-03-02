@@ -11,8 +11,6 @@
 
 # alist
 git clone https://github.com/sbwml/luci-app-alist package/alist
-rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
 
 mkdir package/community
 pushd package/community
