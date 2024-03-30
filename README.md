@@ -8,7 +8,7 @@
 - 固件下载地址：https://github.com/DHDAXCW/OpenWRT_x86_x64/releases
 - 电报群：https://t.me/DHDAXCW
 # 插件展示
- ![Alt text](scripts/20.png?raw=true "Title")
+ ![image](https://github.com/DHDAXCW/OpenWRT_x86_x64/assets/74764072/fb9ff1a4-a907-4712-a2ec-fe3d8324e0f6)
 
 ### 特别提示 [![](https://img.shields.io/badge/-个人免责声明-FFFFFF.svg)](#特别提示-)
 
