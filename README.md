@@ -10,10 +10,6 @@
 # 插件展示
  ![Alt text](scripts/20.png?raw=true "Title")
 
-
-
-# [赏个鸡腿吧](https://afdian.net/@dhdaxcw/plan)
-### https://afdian.net/@dhdaxcw/plan
 ## 鸣谢
 
 特别感谢以下项目：
