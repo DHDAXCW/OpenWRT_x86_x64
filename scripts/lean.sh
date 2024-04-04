@@ -62,6 +62,9 @@ git clone https://github.com/DHDAXCW/theme
 # Add subconverter
 git clone --depth=1 https://github.com/tindy2013/openwrt-subconverter
 
+# Add luci-app-lucky
+git clone --depth=1 https://github.com/gdy666/luci-app-lucky
+
 # alist
 git clone --depth=1 https://github.com/sbwml/openwrt-alist
 
