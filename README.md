@@ -16,7 +16,8 @@
 5. 支持在线更新，从2024.03.27之后就能通过后台升级
 6. 特调优化irq中断分配网卡绑定cpu
 
-### 插件截图
+### 固件截图
+![3d2f123c2ee16b0ea02746a41616a9e7](https://github.com/DHDAXCW/OpenWRT_x86_x64/assets/74764072/b8eec7cf-b229-416b-884e-34dfa49725fa)
 
 ### 特别提示 [![](https://img.shields.io/badge/-个人免责声明-FFFFFF.svg)](#特别提示-)
 
