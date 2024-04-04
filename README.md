@@ -7,8 +7,16 @@
 - 用户名：root 密码：password  管理IP：192.168.11.1
 - 固件下载地址：https://github.com/DHDAXCW/OpenWRT_x86_x64/releases
 - 电报群：https://t.me/DHDAXCW
-# 插件展示
-![image](https://github.com/DHDAXCW/OpenWRT_x86_x64/assets/74764072/673ace96-0b9e-459a-8d50-6da2a3ee3e26)
+
+### 固件特色
+1. 集成 iStore 应用商店，可根据自己需求自由安装所需插件
+2. 集成应用过滤插件，支持游戏、视频、聊天、下载等 APP 过滤
+3. 集成在线用户插件，可查看所有在线用户 IP 地址与实时速率等
+4. 集成部分常用有线、无线、3G / 4G / 5G 网卡驱动 可在issues提支持网卡，看本人能力了。。。
+5. 支持在线更新，从2024.03.27之后就能通过后台升级
+6. 特调优化irq中断分配网卡绑定cpu
+
+### 插件截图
 
 ### 特别提示 [![](https://img.shields.io/badge/-个人免责声明-FFFFFF.svg)](#特别提示-)
 
