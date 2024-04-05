@@ -19,7 +19,7 @@ on:
 env:
   REPO_URL: https://github.com/DHDAXCW/lede-rockchip
   REPO_BRANCH: stable
-  CONFIG_FILE: configs/lean/openwrt-docker.config
+  CONFIG_FILE: configs/lean/openwrt.config
   DIY_SH: scripts/lean.sh
   KMODS_IN_FIRMWARE: true
   UPLOAD_RELEASE: true
@@ -71,6 +71,7 @@ jobs:
         ../$DIY_SH
         ../scripts/preset-clash-core.sh amd64
         ../scripts/preset-terminal-tools.sh
+        echo 'CONFIG_PACKAGE_luci-app-dockerman=y' >> .config
         make defconfig
         
     - name: Download Package
