@@ -141,6 +141,7 @@ jobs:
         rm -rf openwrt-x86-64-generic-squashfs-rootfs.img.gz
         rm -rf openwrt-x86-64-generic-squashfs-combined-efi.vmdk
         rm -rf openwrt-x86-64-generic.manifest
+        mv openwrt-x86-64-generic-squashfs-combined-efi.img.gz $(date +"%Y.%m.%d")-openwrt-x86-64-squashfs-efi.img.gz
         popd
         make checksum
         echo "GENERATE_STATUS=success" >> $GITHUB_OUTPUT
