@@ -71,7 +71,18 @@ jobs:
         ../$DIY_SH
         ../scripts/preset-clash-core.sh amd64
         ../scripts/preset-terminal-tools.sh
-        echo 'CONFIG_PACKAGE_luci-app-dockerman=y' >> .config
+        echo '
+        CONFIG_DOCKER_CGROUP_OPTIONS=y
+        CONFIG_DOCKER_NET_ENCRYPT=y
+        CONFIG_DOCKER_NET_MACVLAN=y
+        CONFIG_DOCKER_NET_OVERLAY=y
+        CONFIG_DOCKER_NET_TFTP=y
+        CONFIG_DOCKER_OPTIONAL_FEATURES=y
+        CONFIG_DOCKER_STO_BTRFS=y
+        CONFIG_DOCKER_STO_EXT4=y
+        CONFIG_PACKAGE_luci-app-dockerman=y
+        CONFIG_PACKAGE_luci-lib-docker=y
+        ' >> .config
         make defconfig
         
     - name: Download Package
