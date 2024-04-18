@@ -42,7 +42,7 @@ git clone https://github.com/DHDAXCW/theme
 git clone --depth=1 https://github.com/gdy666/luci-app-lucky
 
 # alist
-git clone --depth=1 https://github.com/DHDAXCW/luci-app-alist
+git clone --depth=1 https://github.com/sbwml/luci-app-alist
 
 # Add OpenAppFilter
 git clone --depth=1 https://github.com/destan19/OpenAppFilter
