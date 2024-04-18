@@ -47,9 +47,6 @@ git clone --depth=1 https://github.com/sbwml/luci-app-alist
 # Add OpenAppFilter
 git clone --depth=1 https://github.com/destan19/OpenAppFilter
 
-# luci-app-daed-next
-git clone --depth=1 https://github.com/QiuSimons/luci-app-daed-next
-
 popd
  
 # Mod zzz-default-settings
