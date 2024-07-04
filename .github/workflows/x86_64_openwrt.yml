@@ -88,7 +88,6 @@ jobs:
       run: |
         cd $OPENWRTROOT
         echo -e "$(nproc) thread compile"
-        rm -rf package/feeds/packages/lame
         make tools/compile -j$(nproc) || make tools/compile -j$(nproc)
         make toolchain/compile -j$(nproc) || make toolchain/compile -j$(nproc)
         make target/compile -j$(nproc) || make target/compile -j$(nproc) IGNORE_ERRORS=1
