@@ -90,7 +90,7 @@ jobs:
         echo -e "$(nproc) thread compile"
         rm -rf package/feeds/packages/lame
         make tools/compile -j$(nproc) || make tools/compile -j$(nproc)
-        make toolchain/compile -j$(nproc) || && make toolchain/compile -j$(nproc)
+        make toolchain/compile -j$(nproc) || make toolchain/compile -j$(nproc)
         make target/compile -j$(nproc) || make target/compile -j$(nproc) IGNORE_ERRORS=1
         make diffconfig
         make package/compile -j$(nproc) IGNORE_ERRORS=1 || make clean && make package/compile -j$(nproc) IGNORE_ERRORS=1
