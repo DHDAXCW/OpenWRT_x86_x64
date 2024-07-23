@@ -65,7 +65,9 @@ popd
 rm -rf nas-packages-luci/luci/luci-app-istorex
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
-
+rm -rf package/feeds/packages/libmbim
+rm -rf package/feeds/packages/lame
+    
 # Change default shell to zsh
 sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
 
