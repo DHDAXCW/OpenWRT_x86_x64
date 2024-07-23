@@ -18,6 +18,9 @@ rm -rf ../../customfeeds/luci/applications/luci-app-kodexplorer
 rm -rf openwrt-package/verysync
 rm -rf openwrt-package/luci-app-verysync
 
+# apppppppp
+git clone --depth=1 https://github.com/DHDAXCW/dhdaxcw-app
+
 # Add luci-app-ssr-plus
 git clone --depth=1 https://github.com/fw876/helloworld
 
