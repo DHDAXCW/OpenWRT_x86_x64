@@ -40,6 +40,19 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
+    - name: Initialization Environment
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        echo -e "Total CPU cores\t: $(nproc)"
+        cat /proc/cpuinfo | grep 'model name'
+        free -h
+        uname -a
+        [ -f /proc/version ] && cat /proc/version
+        [ -f /etc/issue.net ] && cat /etc/issue.net
+        [ -f /etc/issue ] && cat /etc/issue
+        ulimit -a
+        
     - name: Clone Source Code
       run: |
         df -hT $PWD
