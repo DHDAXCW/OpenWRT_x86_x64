@@ -17,7 +17,7 @@
 6. 特调优化irq中断分配网卡绑定cpu
 
 ### 固件截图
-![image](https://github.com/DHDAXCW/OpenWRT_x86_x64/assets/74764072/5b41b776-9b61-4bd2-8c73-dee8dc2cb48f)
+<img width="1107" alt="sssss" src="https://github.com/user-attachments/assets/d76cee28-2dce-4644-a3e7-9e68ec225187">
 
 ### 特别提示 [![](https://img.shields.io/badge/-个人免责声明-FFFFFF.svg)](#特别提示-)
 
