@@ -65,8 +65,6 @@ popd
 rm -rf nas-packages-luci/luci/luci-app-istorex
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
-rm -rf package/feeds/packages/libmbim
-rm -rf package/feeds/packages/lame
 rm -rf package/feeds/packages/apk
 rm -rf package/feeds/packages/adguardhome
 
