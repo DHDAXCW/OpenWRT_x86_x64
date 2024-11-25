@@ -100,12 +100,10 @@ jobs:
       run: |
         cd $OPENWRTROOT
         echo -e "$(nproc) thread compile"
-        make tools/compile -j$(nproc) || make tools/compile -j$(nproc)
-        make toolchain/compile -j$(nproc) || make toolchain/compile -j$(nproc)
-        make target/compile -j$(nproc) || make target/compile -j$(nproc) IGNORE_ERRORS=1
-        make diffconfig
-        make package/compile -j$(nproc) IGNORE_ERRORS=1 || make package/compile -j$(nproc) IGNORE_ERRORS=1
-        make package/index
+        make tools/compile -j$(nproc)
+        make toolchain/compile -j$(nproc)
+        make package/cleanup -j$(nproc)
+        make target/compile -j$(nproc)
         cd $OPENWRTROOT/bin/packages/*
         PLATFORM=$(basename `pwd`)
         echo "PLATFORM=$PLATFORM" >> $GITHUB_ENV
@@ -130,8 +128,7 @@ jobs:
         mkdir -p files/etc/uci-defaults/
         cp ../scripts/init-settings.sh files/etc/uci-defaults/99-init-settings
         sed -i "s/http:\/\/192.168.123.100:2345\/snapshots/https:\/\/openwrt.cc\/snapshots\/$(date +"%Y-%m-%d")\/lean/g" files/etc/opkg/distfeeds.conf.mirror
-        make package/install -j$(nproc) || make package/install -j1 V=s
-        make target/install -j$(nproc) || make target/install -j1 V=s
+        make -j$(nproc)
         pushd bin/targets/x86/64
         rm -rf openwrt-x86-64-generic-kernel.bin
         rm -rf openwrt-x86-64-generic-rootfs.tar.gz
