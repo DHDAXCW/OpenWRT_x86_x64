@@ -104,7 +104,6 @@ jobs:
         make toolchain/compile -j$(nproc)
         make package/cleanup -j$(nproc)
         make target/compile -j$(nproc)
-        cd $OPENWRTROOT/bin/packages/*
         PLATFORM=$(basename `pwd`)
         echo "PLATFORM=$PLATFORM" >> $GITHUB_ENV
         echo "PLATFORM=$PLATFORM" >> $GITHUB_OUTPUT
