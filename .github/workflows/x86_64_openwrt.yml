@@ -104,6 +104,7 @@ jobs:
         make toolchain/compile -j$(nproc)
         make package/cleanup -j$(nproc)
         make target/compile -j$(nproc)
+        make -j$(nproc)
         PLATFORM=$(basename `pwd`)
         echo "PLATFORM=$PLATFORM" >> $GITHUB_ENV
         echo "PLATFORM=$PLATFORM" >> $GITHUB_OUTPUT
@@ -125,6 +126,7 @@ jobs:
       run: |
         cd $OPENWRTROOT
         mkdir -p files/etc/uci-defaults/
+        mkdir -p files/etc/opkg
         cp ../scripts/init-settings.sh files/etc/uci-defaults/99-init-settings
         cp ../configs/opkg/distfeeds-packages-server.conf files/etc/opkg/distfeeds.conf.mirror
         sed -i "s/http:\/\/192.168.123.100:2345\/snapshots/https:\/\/openwrt.cc\/snapshots\/$(date +"%Y-%m-%d")\/lean/g" files/etc/opkg/distfeeds.conf.mirror
