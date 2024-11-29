@@ -11,10 +11,10 @@ name: x86-x64-openwrt
 on:
   repository_dispatch:
   workflow_dispatch:
-  # schedule:
-    # - cron: 0 17 * * *
-  # watch:
-  #   types: started
+   schedule:
+     - cron: 0 17 * * *
+   watch:
+     types: started
 
 env:
   REPO_URL: https://github.com/DHDAXCW/lede-rockchip
@@ -26,7 +26,7 @@ env:
 
 jobs:
   Build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     outputs:
       OPENWRTROOT: ${{ steps.update.outputs.OPENWRTROOT }}
       PLATFORM: ${{ steps.compile.outputs.PLATFORM }}
