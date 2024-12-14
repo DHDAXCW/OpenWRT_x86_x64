@@ -18,7 +18,7 @@ on:
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: stable
+  REPO_BRANCH: master
   CONFIG_FILE: configs/lean/openwrt.config
   DIY_SH: scripts/lean.sh
   KMODS_IN_FIRMWARE: true
