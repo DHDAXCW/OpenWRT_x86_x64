@@ -48,7 +48,7 @@ cp -f $GITHUB_WORKSPACE/data/bg1.jpg luci-theme-argon/htdocs/luci-static/argon/i
 git clone https://github.com/DHDAXCW/theme
 
 # Add luci-app-lucky
-git clone --depth=1 https://github.com/gdy666/luci-app-lucky
+git clone --depth=1 -b 2.13.4 https://github.com/DHDAXCW/luci-app-lucky
 
 # alist
 git clone -b lua --depth=1 https://github.com/sbwml/luci-app-alist
