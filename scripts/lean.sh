@@ -56,6 +56,12 @@ git clone -b lua --depth=1 https://github.com/sbwml/luci-app-alist
 # Add OpenAppFilter
 git clone --depth=1 https://github.com/destan19/OpenAppFilter
 
+# qbittorrent
+rm -rf ../../customfeeds/packages/net/qBittorrent
+rm -rf ../../customfeeds/packages/libs/rblibtorrent
+git clone --depth=1 https://github.com/sbwml/luci-app-qbittorrent
+rm -rf luci-app-qbittorrent/luci-app-qbittorrent
+
 popd
  
 # Mod zzz-default-settings
