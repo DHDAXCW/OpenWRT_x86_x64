@@ -49,6 +49,7 @@ git clone https://github.com/DHDAXCW/theme
 
 # Add luci-app-lucky
 git clone --depth=1 -b 2.13.4 https://github.com/DHDAXCW/luci-app-lucky
+rm -rf ../../customfeeds/packages/net/lucky
 
 # alist
 git clone -b lua --depth=1 https://github.com/sbwml/luci-app-alist
