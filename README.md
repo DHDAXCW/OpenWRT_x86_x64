@@ -6,8 +6,7 @@
 ### 默认编译  
 - 用户名：root 密码：password  管理IP：192.168.11.1
 - 固件下载地址：https://github.com/DHDAXCW/OpenWRT_x86_x64/releases
-- 电报群：https://t.me/DHDAXCW
-
+- 电报群：https://t.me/armopenwrt
 ### 固件特色
 1. 集成 iStore 应用商店，可根据自己需求自由安装所需插件
 2. 集成应用过滤插件，支持游戏、视频、聊天、下载等 APP 过滤
