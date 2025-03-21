@@ -1,0 +1,64 @@
+name: immortalwrt_x86_64
+
+on:
+  workflow_dispatch:
+
+env:
+  REPO_URL: https://github.com/DHDAXCW/immortalwrt
+  REPO_BRANCH: openwrt-24.10
+  CONFIG_FILE: immortalwrt/x86_64/defconfig
+  DIY_P1_SH: immortalwrt/diy-part1.sh
+  DIY_P2_SH: immortalwrt/diy-part2.sh
+  UPLOAD_FIRMWARE: true
+  UPLOAD_RELEASE: true
+  TZ: Asia/Shanghai
+  OPENWRT_NAME: immortalwrt
+  OPENWRT_NAME1: x86_64
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+    - name: Check out the project branch
+      uses: actions/checkout@main
+      
+    - name: Download firmware source code
+      run: |
+        git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
+         
+    - name: Update & install feeds
+      working-directory: ./openwrt
+      run: |
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
+        
+    - name: Load feeds.conf.default
+      run: |
+        chmod +x $OPENWRT_NAME/*.sh
+        cd openwrt
+        $GITHUB_WORKSPACE/$DIY_P1_SH
+
+    - name: Load config
+      run: |
+        [ -e "$CONFIG_FILE" ] && cat "$CONFIG_FILE" > openwrt/.config
+        chmod +x $OPENWRT_NAME/*.sh && cd openwrt
+        $GITHUB_WORKSPACE/$DIY_P2_SH
+
+    - name: Download the installation package
+      id: package
+      run: |
+        cd openwrt
+        make defconfig
+        cat .config
+        make download -j$(nproc)
+        find dl -size -1024c -exec ls -l {} \;
+        find dl -size -1024c -exec rm -f {} \;
+        
+    - name: Compile the firmware
+      id: compile
+      run: |
+        cd openwrt
+        echo -e "$(nproc) thread compile"
+        make -j$(nproc) || make -j1 || make -j1 V=s
+        echo "status=success" >> $GITHUB_OUTPUT
