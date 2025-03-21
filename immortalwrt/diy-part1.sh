@@ -20,7 +20,7 @@ pushd package/community
 git clone --depth=1 https://github.com/fw876/helloworld
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2
 git clone --depth=1 https://github.com/nikkinikki-org/OpenWrt-nikki
-git clobe --depth=1 https://github.com/DHDAXCW/dhdaxcw-app
+git clone --depth=1 https://github.com/DHDAXCW/dhdaxcw-app
 git clone --depth=1 https://github.com/jerrykuku/luci-theme-argon
 git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config
 popd
