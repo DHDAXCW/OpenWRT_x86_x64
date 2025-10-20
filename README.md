@@ -1,5 +1,5 @@
 # x86-x64 每天自动更新插件和内核版本。<img src="https://img.shields.io/github/downloads/DHDAXCW/OpenWRT_x86_x64/total.svg?style=for-the-badge&color=32C955"/>
-# 机场推荐 [ENET--IEPL内网专线接入](https://www.easyenable.com/#/register?code=zb7iVViF)
+### 机场推荐 [ENET--IEPL内网专线接入](https://www.easyenable.com/#/register?code=fO8Tk45J)
 ## 👉使用本固件前，请严格遵守国家互联网使用相关法律规定,不要违反国家法律规定！👈
 ## 本固件在任何组织和个人不得用于任何商业盈利用途。
 
