@@ -25,6 +25,7 @@ git clone --depth=1 https://github.com/jerrykuku/luci-theme-argon
 git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config
 git clone --depth=1 https://github.com/linkease/istore
 git clone --depth=1 https://github.com/Siriling/5G-Modem-Support && rm -rf 5G-Modem-Support/rooter
+git clone --depth=1 https://github.com/gdy666/luci-app-lucky
 popd
 
 # add luci-app-mosdns
