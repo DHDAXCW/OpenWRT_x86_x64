@@ -24,8 +24,9 @@ git clone --depth=1 https://github.com/DHDAXCW/dhdaxcw-app
 git clone --depth=1 https://github.com/jerrykuku/luci-theme-argon
 git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config
 git clone --depth=1 https://github.com/linkease/istore
-git clone --depth=1 https://github.com/Siriling/5G-Modem-Support && rm-rf 5G-Modem-Support/rooter
+git clone --depth=1 https://github.com/Siriling/5G-Modem-Support
 popd
+rm-rf package/community/5G-Modem-Support/rooter
 
 # add luci-app-mosdns
 rm -rf feeds/packages/lang/golang
