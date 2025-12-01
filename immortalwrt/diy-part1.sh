@@ -24,6 +24,7 @@ git clone --depth=1 https://github.com/DHDAXCW/dhdaxcw-app
 git clone --depth=1 https://github.com/jerrykuku/luci-theme-argon
 git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config
 git clone --depth=1 https://github.com/linkease/istore
+git clone --depth=1 https://github.com/Siriling/5G-Modem-Support
 popd
 
 # add luci-app-mosdns
@@ -32,5 +33,3 @@ git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/l
 rm -rf feeds/packages/net/v2ray-geodata
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
-
-merge_package https://github.com/DHDAXCW/lede-rockchip lede-rockchip/package/wwan
