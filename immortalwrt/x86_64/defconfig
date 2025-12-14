@@ -169,6 +169,7 @@ CONFIG_PACKAGE_iptables-mod-tproxy=y
 CONFIG_PACKAGE_iptables-nft=y
 CONFIG_PACKAGE_iw=y
 CONFIG_PACKAGE_iwinfo=y
+CONFIG_PACKAGE_libiwinfo=y
 CONFIG_PACKAGE_jq=y
 CONFIG_PACKAGE_kmod-asn1-encoder=y
 CONFIG_PACKAGE_kmod-ata-ahci=y
