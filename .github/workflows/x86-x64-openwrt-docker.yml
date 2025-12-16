@@ -7,7 +7,7 @@ on:
 
 env:
   REPO_URL: https://github.com/DHDAXCW/immortalwrt
-  REPO_BRANCH: openwrt-24.10
+  REPO_BRANCH: openwrt-25.12
   CONFIG_FILE: immortalwrt/x86_64/defconfig
   DIY_P1_SH: immortalwrt/diy-part1.sh
   DIY_P2_SH: immortalwrt/diy-part2.sh
