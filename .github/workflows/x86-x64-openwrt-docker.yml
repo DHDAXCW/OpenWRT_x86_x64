@@ -1,8 +1,6 @@
 name: immortalwrt_x86_64_docker
 
 on:
-  schedule:
-    - cron: 0 16 * * *
   workflow_dispatch:
 
 env:
